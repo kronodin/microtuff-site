@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://kronodin.github.io/microtuff-site/sitemap.xml
