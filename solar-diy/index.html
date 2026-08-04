@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>DIY Solar Power Systems Guide | Small to Large Scale | Microtuff Solutions</title>
+<meta name="description" content="Complete DIY solar power wiki. Learn to build solar systems from 100W portable to 10kW+ home arrays. Includes blueprints, wiring diagrams, component specs, panel types, battery comparisons, and step-by-step installation guides.">
+<link rel="canonical" href="https://kronodin.github.io/microtuff-site/solar-diy/">
+<style>
+:root{--bg:#0f172a;--card:#1e293b;--gold:#d4a843;--text:#f1f5f9;--muted:#94a3b8;--border:#334155;--success:#22c55e;--warn:#f59e0b;--danger:#ef4444}
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:system-ui,-apple-system,sans-serif;background:var(--bg);color:var(--text);line-height:1.7;font-size:16px}
+.container{max-width:1200px;margin:0 auto;padding:2rem 1rem}
+header{background:linear-gradient(135deg,#0f172a 0%,#1e293b 100%);border-bottom:2px solid var(--gold);padding:3rem 1rem;text-align:center}
+header h1{font-size:clamp(1.75rem,5vw,2.75rem);color:var(--gold);margin-bottom:.5rem}
+header p{color:var(--muted);max-width:800px;margin:0 auto;font-size:1.1rem}
+nav{background:var(--card);border-bottom:1px solid var(--border);padding:1rem;position:sticky;top:0;z-index:100}
+nav ul{list-style:none;display:flex;gap:1.5rem;justify-content:center;flex-wrap:wrap}
+nav a{color:var(--gold);text-decoration:none;font-weight:600;font-size:.95rem}
+nav a:hover{text-decoration:underline}
+section{margin:3rem 0;padding:2rem;background:var(--card);border:1px solid var(--border);border-radius:12px}
+h2{color:var(--gold);font-size:1.75rem;margin-bottom:1rem;border-bottom:2px solid var(--border);padding-bottom:.5rem}
+h3{color:var(--text);font-size:1.35rem;margin:1.5rem 0 .75rem}
+h4{color:var(--muted);font-size:1.1rem;margin:1rem 0 .5rem}
+table{width:100%;border-collapse:collapse;margin:1.5rem 0;font-size:.95rem}
+th,td{padding:.75rem;text-align:left;border-bottom:1px solid var(--border)}
+th{background:#0f172a;color:var(--gold);font-weight:600}
+tr:hover{background:#0f172a}
+.diagram{background:#0f172a;border:2px solid var(--border);border-radius:8px;padding:1.5rem;margin:1.5rem 0;font-family:monospace;font-size:.85rem;line-height:1.5;overflow-x:auto;color:#22d3ee}
+.diagram-title{color:var(--gold);font-weight:700;margin-bottom:.75rem;font-family:system-ui,sans-serif;font-size:1.1rem}
+.callout{background:#1e293b;border-left:4px solid var(--gold);padding:1rem 1.25rem;margin:1.5rem 0;border-radius:0 8px 8px 0}
+.callout.danger{border-left-color:var(--danger);background:#1a0f0f}
+.callout.success{border-left-color:var(--success);background:#0f1a14}
+.toc{background:#0f172a;padding:1.5rem;border-radius:8px;margin:2rem 0}
+.toc h3{color:var(--gold);margin-top:0}
+.toc ul{list-style:none;padding-left:0}
+.toc li{margin:.5rem 0}
+.toc a{color:var(--muted);text-decoration:none}
+.toc a:hover{color:var(--gold)}
+.system-card{background:#0f172a;border:1px solid var(--border);border-radius:10px;padding:1.5rem;margin:1rem 0;transition:transform .2s}
+.system-card:hover{transform:translateY(-2px);border-color:var(--gold)}
+.system-card h3{color:var(--gold);margin-top:0}
+.spec-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:1rem;margin:1.5rem 0}
+.spec-item{background:#0f172a;padding:1rem;border-radius:8px;border:1px solid var(--border)}
+.spec-item strong{color:var(--gold);display:block;margin-bottom:.25rem}
+code{background:#0f172a;padding:.2rem .5rem;border-radius:4px;font-family:monospace;color:#22d3ee;font-size:.9rem}
+pre{background:#0f172a;padding:1rem;border-radius:8px;overflow-x:auto;border:1px solid var(--border)}
+pre code{background:none;padding:0}
+footer{text-align:center;padding:2rem 1rem;color:var(--muted);font-size:.9rem;border-top:1px solid var(--border);margin-top:3rem}
+</style>
+</head>
+<body>
+<header>
+<h1>DIY Solar Power Systems Wiki</h1>
+<p>Build solar power systems from 100W portable rigs to 10kW+ home arrays. Complete blueprints, wiring diagrams, component specs, and safety guides for every skill level.</p>
+</nav>
+
+<div class="container">
+
+<div class="toc">
+<h3>Table of Contents</h3>
+<ul>
+<li><a href="#fundamentals">Solar Fundamentals</a></li>
+<li><a href="#components">Core Components</a></li>
+<li><a href="#small">Small Systems (100W–500W)</a></li>
+<li><a href="#medium">Medium Systems (500W–2kW)</a></li>
+<li><a href="#large">Large Systems (2kW–10kW+)</a></li>
+<li><a href="#wiring">Wiring Diagrams</a></li>
+<li><a href="#safety">Safety & Codes</a></li>
+<li><a href="#troubleshooting">Troubleshooting</a></li>
+</ul>
+</div>
+
+<section id="fundamentals">
+<h2>Solar Fundamentals</h2>
+<p>Photovoltaic (PV) systems convert sunlight into electricity using semiconductor materials. The core equation:</p>
+<pre><code>Watts = Volts × Amps
+Daily Wh = Panel Watts × Sun Hours × System Efficiency (0.75)</code></pre>
+<div class="callout">
+<strong>Example:</strong> A 400W panel in Jamaica (5.5 peak sun hours) produces:
+400W × 5.5h × 0.75 = <strong>1,650Wh/day</strong>
+</div>
+
+<h3>System Types</h3>
+<table>
+<tr><th>Type</th><th>Description</th><th>Best For</th><th>Cost Range (USD)</th></tr>
+<tr><td>Portable</td><td>Panel + battery + controller, no wiring</td><td>Camping, charging devices</td><td>$50–$200</td></tr>
+<tr><td>Off-Grid</td><td>Full standalone system with battery bank</td><td>Remote locations, cabins</td><td>$500–$15,000</td></tr>
+<tr><td>Grid-Tied</td><td>Solar + inverter tied to utility</td><td>Homes, businesses</td><td>$2,000–$25,000</td></tr>
+<tr><td>Hybrid</td><td>Grid-tied + battery backup</td><td>Backup power, load shifting</td><td>$3,000–$30,000</td></tr>
+</table>
+</section>
+
+<section id="components">
+<h2>Core Components</h2>
+
+<h3>Solar Panels</h3>
+<table>
+<tr><th>Type</th><th>Efficiency</th><th>Cost/Watt</th><th>Lifespan</th><th>Best Use</th></tr>
+<tr><td>Monocrystalline</td><td>19–24%</td><td>$0.70–$1.20</td><td>25–30 years</td><td>Limited space, max output</td></tr>
+<tr><td>Polycrystalline</td><td>15–19%</td><td>$0.50–$0.90</td><td>20–25 years</td><td>Large arrays, budget builds</td></tr>
+<tr><td>Thin-Film (CdTe)</td><td>10–13%</td><td>$0.40–$0.70</td><td>15–20 years</td><td>Flexible installs, low light</td></tr>
+<tr><td>Bifacial</td><td>20–25%</td><td>$0.80–$1.40</td><td>25–30 years</td><td>Ground mounts, albedo surfaces</td></tr>
+</table>
+
+<div class="callout success">
+<strong>Recommendation:</strong> Use monocrystalline for all DIY builds under 2kW. Bifacial only for ground-mount large arrays with reflective surfaces.
+</div>
+
+<h3>Batteries</h3>
+<table>
+<tr><th>Type</th><th>Voltage</th><th>Cycle Life</th><th>DoD</th><th>Cost/kWh</th><th>Best For</th></tr>
+<tr><td>LiFePO4</td><td>12V, 24V, 48V</td><td>3,000–7,000</td><td>80–90%</td><td>$300–$600</td><td>All modern builds</td></tr>
+<tr><td>Lithium-ion (NMC)</td><td>12V, 24V</td><td>2,000–4,000</td><td>70–80%</td><td>$400–$800</td><td>Weight-sensitive builds</td></tr>
+<tr><td>AGM/Gel (Lead-Acid)</td><td>12V, 6V</td><td>300–500</td><td>50% max</td><td>$150–$300</td><td>Budget off-grid only</td></tr>
+<tr><td>Flooded Lead-Acid</td><td>6V, 12V</td><td>200–300</td><td>50% max</td><td>$100–$200</td><td>Large stationary banks</td></tr>
+</table>
+
+<div class="callout danger">
+<strong>Warning:</strong> Lead-acid batteries require ventilation, regular watering, and have short cycle life. LiFePO4 is recommended for all DIY builds.
+</div>
+
+<h3>Charge Controllers</h3>
+<table>
+<tr><th>Type</th><th>Efficiency</th><th>Max Voc</th><th>Best For</th></tr>
+<tr><td>PWM</td><td>70–80%</td><td>30V</td><td>Small 12V systems only</td></tr>
+<tr><td>MPPT</td><td>95–99%</td><td>100V–150V</td><td>All 24V/48V systems</td></tr>
+</table>
+
+<h3>Inverters</h3>
+<table>
+<tr><th>Type</th><th>THD</th><th>Best For</th></tr>
+<tr><td>Pure Sine Wave</td><td><3%</td><td>Sensitive electronics, appliances</td></tr>
+<tr><td>Modified Sine Wave</td><td>~30%</td><td>Basic resistive loads only</td></tr>
+</table>
+</section>
+
+<section id="small">
+<h2>Small Systems (100W–500W)</h2>
+<p>Ideal for camping, sheds, tiny homes, RV, and device charging.</p>
+
+<div class="system-card">
+<h3>100W Portable Kit</h3>
+<div class="spec-grid">
+<div class="spec-item"><strong>Panel</strong>1× 100W monocrystalline, 18V Voc ~22V</div>
+<div class="spec-item"><strong>Battery</strong>1× 12V 50Ah LiFePO4 (~640Wh usable)</div>
+<div class="spec-item"><strong>Controller</strong>10A MPPT</div>
+<div class="spec-item"><strong>Inverter</strong>150W pure sine wave (optional)</div>
+<div class="spec-item"><strong>Wiring</strong>16 AWG PV, 12 AWG battery</div>
+<div class="spec-item"><strong>Output</strong>~400Wh/day (Jamaica)</div>
+<div class="spec-item"><strong>Cost</strong>$150–$250</div>
+<div class="spec-item"><strong>Runtime</strong>Phone/laptop charging, LED lights, 12V cooler</div>
+</div>
+<div class="diagram">
+<div class="diagram-title">100W Portable System Wiring</div>
+[PANEL 100W 18V]
+   |
+   |--- 16 AWG ---+
+                 |
+             [MPPT 10A]
+                 |
+                 |--- 12 AWG ---+
+                 |               |
+            [BATTERY 12V]    [INVERTER 150W]
+                 |               |
+                 +-------+-------+
+                         |
+                    [USB/AC OUTLETS]
+</div>
+</div>
+
+<div class="system-card">
+<h3>500W Shed/Garden System</h3>
+<div class="spec-grid">
+<div class="spec-item"><strong>Panels</strong>2× 250W monocrystalline, series (36V Voc)</div>
+<div class="spec-item"><strong>Battery</strong>1× 12V 100Ah LiFePO4 (~1.28kWh usable)</div>
+<div class="spec-item"><strong>Controller</strong>20A MPPT 12V</div>
+<div class="spec-item"><strong>Inverter</strong>500W pure sine wave</div>
+<div class="spec-item"><strong>Wiring</strong>14 AWG PV, 10 AWG battery</div>
+<div class="spec-item"><strong>Fusing</strong>30A DC breaker, 10A AC fuse</div>
+<div class="spec-item"><strong>Output</strong>~2kWh/day</div>
+<div class="spec-item"><strong>Cost</strong>$350–$600</div>
+</div>
+<div class="diagram">
+<div class="diagram-title">500W Shed System Wiring</div>
+[PANEL 250W] + [PANEL 250W]  (Series = 36V)
+   |
+   |--- 14 AWG ---+
+                 |
+             [MPPT 20A]
+                 |
+                 |--- 10 AWG ---+
+                 |               |
+            [BATTERY 12V]    [INVERTER 500W]
+                 |               |
+                 +-------+-------+
+                         |
+                    [AC OUTLETS + DC 12V]
+</div>
+</div>
+</section>
+
+<section id="medium">
+<h2>Medium Systems (500W–2kW)</h2>
+<p>For cabins, small homes, workshops, and off-grid living.</p>
+
+<div class="system-card">
+<h3>1kW Cabin System</h3>
+<div class="spec-grid">
+<div class="spec-item"><strong>Panels</strong>4× 250W monocrystalline, 2s2p (36V Voc)</div>
+<div class="spec-item"><strong>Battery</strong>2× 12V 100Ah LiFePO4, parallel (24V, ~2.56kWh usable)</div>
+<div class="spec-item"><strong>Controller</strong>40A MPPT 24V</div>
+<div class="spec-item"><strong>Inverter</strong>2kW pure sine wave 24V</div>
+<div class="spec-item"><strong>Wiring</strong>12 AWG PV, 8 AWG battery</div>
+<div class="spec-item"><strong>Fusing</strong>50A DC breaker, 25A AC fuse</div>
+<div class="spec-item"><strong>Output</strong>~4–5kWh/day</div>
+<div class="spec-item"><strong>Cost</strong>$1,200–$2,200</div>
+</div>
+<div class="diagram">
+<div class="diagram-title">1kW Cabin System (24V)</div>
+[PANEL 250W] + [PANEL 250W]  (Series A: 36V)
+   |                        |
+   +--------[STRING A]------+
+   |                        |
+[PANEL 250W] + [PANEL 250W]  (Series B: 36V)
+   |                        |
+   +--------[STRING B]------+
+             |
+         [COMBINER]
+             |
+         [MPPT 40A]
+             |
+             |--- 8 AWG ---+
+             |               |
+        [BATTERY 24V]    [INVERTER 2kW]
+             |               |
+             +-------+-------+
+                     |
+                [AC PANEL]
+</div>
+</div>
+
+<div class="system-card">
+<h3>2kW Workshop System</h3>
+<div class="spec-grid">
+<div class="spec-item"><strong>Panels</strong>8× 250W monocrystalline, 4s2p (72V Voc)</div>
+<div class="spec-item"><strong>Battery</strong>4× 12V 100Ah LiFePO4, 2s2p (24V, ~5.12kWh usable)</div>
+<div class="spec-item"><strong>Controller</strong>80A MPPT 24V</div>
+<div class="spec-item"><strong>Inverter</strong>3kW pure sine wave 24V</div>
+<div class="spec-item"><strong>Wiring</strong>10 AWG PV, 6 AWG battery</div>
+<div class="spec-item"><strong>Fusing</strong>100A DC breaker, 40A AC fuse</div>
+<div class="spec-item"><strong>Output</strong>~8–10kWh/day</div>
+<div class="spec-item"><strong>Cost</strong>$2,500–$4,500</div>
+</div>
+</div>
+</section>
+
+<section id="large">
+<h2>Large Systems (2kW–10kW+)</h2>
+<p>Full home power, commercial buildings, microgrid-ready.</p>
+
+<div class="system-card">
+<h3>5kW Home System</h3>
+<div class="spec-grid">
+<div class="spec-item"><strong>Panels</strong>14× 400W monocrystalline, 7s2p (84V Voc)</div>
+<div class="spec-item"><strong>Battery</strong>8× 12V 100Ah LiFePO4, 4s2p (48V, ~20.5kWh usable)</div>
+<div class="spec-item"><strong>Controller</strong>2× 80A MPPT 48V</div>
+<div class="spec-item"><strong>Inverter</strong>8kW pure sine wave 48V</div>
+<div class="spec-item"><strong>Wiring</strong>8 AWG PV, 4 AWG battery</div>
+<div class="spec-item"><strong>Fusing</strong>150A DC breaker, 80A AC fuse</div>
+<div class="spec-item"><strong>Output</strong>~20–25kWh/day</div>
+<div class="spec-item"><strong>Cost</strong>$8,000–$15,000</div>
+</div>
+<div class="callout">
+<strong>Grid-Tied Add-On:</strong> Add a grid-tie inverter or hybrid inverter to sell excess power back to Jamaica Public Service (JPS).
+</div>
+</div>
+
+<div class="system-card">
+<h3>10kW+ Microgrid</h3>
+<div class="spec-grid">
+<div class="spec-item"><strong>Panels</strong>30× 400W bifacial, 10s3p (120V Voc)</div>
+<div class="spec-item"><strong>Battery</strong>16× 12V 100Ah LiFePO4, 4s4p (48V, ~41kWh usable)</div>
+<div class="spec-item"><strong>Controller</strong>4× 80A MPPT 48V</div>
+<div class="spec-item"><strong>Inverter</strong>15kW three-phase 48V</div>
+<div class="spec-item"><strong>Wiring</strong>6 AWG PV, 2 AWG battery, busbars</div>
+<div class="spec-item"><strong>Fusing</strong>250A DC breaker, 125A AC fuse</div>
+<div class="spec-item"><strong>Output</strong>~40–50kWh/day</div>
+<div class="spec-item"><strong>Cost</strong>$18,000–$35,000</div>
+</div>
+</div>
+</section>
+
+<section id="wiring">
+<h2>Wiring Diagrams & Specifications</h2>
+
+<h3>Wire Gauge Chart (12V–48V DC)</h3>
+<table>
+<tr><th>Amps</th><th>12V Gauge</th><th>24V Gauge</th><th>48V Gauge</th><th>Max Length (10ft/3m)</th></tr>
+<tr><td>10A</td><td>14 AWG</td><td>16 AWG</td><td>18 AWG</td><td>50ft</td></tr>
+<tr><td>20A</td><td>10 AWG</td><td>12 AWG</td><td>14 AWG</td><td>30ft</td></tr>
+<tr><td>50A</td><td>6 AWG</td><td>8 AWG</td><td>10 AWG</td><td>15ft</td></tr>
+<tr><td>100A</td><td>2 AWG</td><td>4 AWG</td><td>6 AWG</td><td>8ft</td></tr>
+</table>
+
+<div class="callout danger">
+<strong>Fusing Rule:</strong> Always place DC breakers on both positive and negative lines between each major component. Fuse rating = 1.25 × continuous current.
+</div>
+
+<div class="diagram">
+<div class="diagram-title">Standard System Layout (24V Example)</div>
+    [SOLAR ARRAY]
+         |
+    [DC DISCONNECT]
+         |
+    [CHARGE CONTROLLER]
+         |
+    [BATTERY BANK]
+         |
+    [DC LOADS]        [INVERTER]
+         |                  |
+      12V/24V           [AC PANEL]
+                             |
+                        [AC LOADS]
+</div>
+
+<h3>Grounding & Bonding</h3>
+<pre><code>Frame Ground:  6 AWG copper to ground rod
+Neutral Bond:  Only at main inverter (off-grid) or main panel (grid-tied)
+Lightning:     Surge Protective Device (SPD) on DC and AC sides</code></pre>
+</section>
+
+<section id="safety">
+<h2>Safety & Electrical Codes</h2>
+<div class="callout danger">
+<strong>Legal Notice:</strong> Grid-tied systems in Jamaica require JPS approval and licensed electrician sign-off. Off-grid systems still require electrical inspection. Always follow NEC/IEC standards.
+</div>
+
+<ul>
+<li><strong>Disconnects:</strong> Install DC disconnects between panels and controller, accessible within sight of array.</li>
+<li><strong>Labeling:</strong> Label all DC conductors with voltage and current ratings. Use UV-resistant labels.</li>
+<li><strong>Ventilation:</strong> Lead-acid battery rooms require 1 sq ft of ventilation per 50Ah. LiFePO4 can be indoors.</li>
+<li><strong>Fire Safety:</strong> Keep batteries away from combustibles. Install smoke detectors. Have Class ABC fire extinguisher.</li>
+<li><strong>PPE:</strong> Insulated gloves, safety glasses, arc-flash rated gear for systems over 48V.</li>
+</ul>
+</section>
+
+<section id="troubleshooting">
+<h2>Troubleshooting Guide</h2>
+<table>
+<tr><th>Symptom</th><th>Cause</th><th>Solution</th></tr>
+<tr><td>Low voltage at battery</td><td>Panel shading, dirty glass, bad connection</td><td>Clean panels, check wiring, measure Voc</td></tr>
+<tr><td>Battery not charging</td><td>Controller fault, wrong settings, dead battery</td><td>Check controller LED, verify battery type setting</td></tr>
+<tr><td>Inverter beeping</td><td>Low battery, overload, overheating</td><td>Reduce load, check ventilation, measure voltage</td></tr>
+<tr><td>System works in sun, not at night</td><td>Battery bank undersized</td><td>Add battery capacity or reduce evening load</td></tr>
+<tr><td>High charge controller temp</td><td>Undersized wiring, poor airflow</td><td>Upgrade wire gauge, relocate controller</td></tr>
+</table>
+</section>
+
+<footer>
+Microtuff Solutions · Mandeville, Jamaica · 1(876) 803-6062 · microtuff@proton.me
+<br>© 2026 Microtuff Solutions. Authorized research and education only.
+</footer>
+
+</body>
+</html>
