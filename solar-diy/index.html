@@ -4,158 +4,660 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>DIY Solar Power Systems Guide | Small to Large Scale | Microtuff Solutions</title>
-<meta name="description" content="Complete DIY solar power wiki. Learn to build solar systems from 100W portable to 10kW+ home arrays. Includes blueprints, wiring diagrams, component specs, panel types, battery comparisons, and step-by-step installation guides.">
+<meta name="description" content="Complete DIY solar power wiki. Learn to build solar systems from 100W portable to 10kW+ home arrays. Includes blueprints, wiring diagrams, component specs, panel types, battery comparisons, and step-by-step installation guides. Or hire Nash Tech for professional installation in Mandeville, Jamaica.">
 <link rel="canonical" href="https://kronodin.github.io/microtuff-site/solar-diy/">
 <style>
-:root{--bg:#0f172a;--card:#1e293b;--gold:#d4a843;--text:#f1f5f9;--muted:#94a3b8;--border:#334155;--success:#22c55e;--warn:#f59e0b;--danger:#ef4444}
-*{margin:0;padding:0;box-sizing:border-box}
-body{font-family:system-ui,-apple-system,sans-serif;background:var(--bg);color:var(--text);line-height:1.7;font-size:16px}
-.container{max-width:1200px;margin:0 auto;padding:2rem 1rem}
-header{background:linear-gradient(135deg,#0f172a 0%,#1e293b 100%);border-bottom:2px solid var(--gold);padding:3rem 1rem;text-align:center}
-header h1{font-size:clamp(1.75rem,5vw,2.75rem);color:var(--gold);margin-bottom:.5rem}
-header p{color:var(--muted);max-width:800px;margin:0 auto;font-size:1.1rem}
-nav{background:var(--card);border-bottom:1px solid var(--border);padding:1rem;position:sticky;top:0;z-index:100}
-nav ul{list-style:none;display:flex;gap:1.5rem;justify-content:center;flex-wrap:wrap}
-nav a{color:var(--gold);text-decoration:none;font-weight:600;font-size:.95rem}
-nav a:hover{text-decoration:underline}
-section{margin:3rem 0;padding:2rem;background:var(--card);border:1px solid var(--border);border-radius:12px}
-h2{color:var(--gold);font-size:1.75rem;margin-bottom:1rem;border-bottom:2px solid var(--border);padding-bottom:.5rem}
-h3{color:var(--text);font-size:1.35rem;margin:1.5rem 0 .75rem}
-h4{color:var(--muted);font-size:1.1rem;margin:1rem 0 .5rem}
-table{width:100%;border-collapse:collapse;margin:1.5rem 0;font-size:.95rem}
-th,td{padding:.75rem;text-align:left;border-bottom:1px solid var(--border)}
-th{background:#0f172a;color:var(--gold);font-weight:600}
-tr:hover{background:#0f172a}
-.diagram{background:#0f172a;border:2px solid var(--border);border-radius:8px;padding:1.5rem;margin:1.5rem 0;font-family:monospace;font-size:.85rem;line-height:1.5;overflow-x:auto;color:#22d3ee}
-.diagram-title{color:var(--gold);font-weight:700;margin-bottom:.75rem;font-family:system-ui,sans-serif;font-size:1.1rem}
-.callout{background:#1e293b;border-left:4px solid var(--gold);padding:1rem 1.25rem;margin:1.5rem 0;border-radius:0 8px 8px 0}
-.callout.danger{border-left-color:var(--danger);background:#1a0f0f}
-.callout.success{border-left-color:var(--success);background:#0f1a14}
-.toc{background:#0f172a;padding:1.5rem;border-radius:8px;margin:2rem 0}
-.toc h3{color:var(--gold);margin-top:0}
-.toc ul{list-style:none;padding-left:0}
-.toc li{margin:.5rem 0}
-.toc a{color:var(--muted);text-decoration:none}
-.toc a:hover{color:var(--gold)}
-.system-card{background:#0f172a;border:1px solid var(--border);border-radius:10px;padding:1.5rem;margin:1rem 0;transition:transform .2s}
-.system-card:hover{transform:translateY(-2px);border-color:var(--gold)}
-.system-card h3{color:var(--gold);margin-top:0}
-.spec-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:1rem;margin:1.5rem 0}
-.spec-item{background:#0f172a;padding:1rem;border-radius:8px;border:1px solid var(--border)}
-.spec-item strong{color:var(--gold);display:block;margin-bottom:.25rem}
-code{background:#0f172a;padding:.2rem .5rem;border-radius:4px;font-family:monospace;color:#22d3ee;font-size:.9rem}
-pre{background:#0f172a;padding:1rem;border-radius:8px;overflow-x:auto;border:1px solid var(--border)}
-pre code{background:none;padding:0}
-footer{text-align:center;padding:2rem 1rem;color:var(--muted);font-size:.9rem;border-top:1px solid var(--border);margin-top:3rem}
+  /* ===== Design Tokens (Nash Tech palette with Microtuff identity) ===== */
+  :root{
+    --bg:#0f172a;
+    --surface:#1e293b;
+    --surface-hover:#273449;
+    --card:#1e293b;
+    --gold:#d4a843;
+    --gold-muted:#b8860b;
+    --text:#f1f5f9;
+    --muted:#94a3b8;
+    --border:#334155;
+    --border-soft:#1e293b;
+    --success:#22c55e;
+    --warn:#f59e0b;
+    --danger:#ef4444;
+    --accent:linear-gradient(135deg, var(--gold) 0%, var(--gold-muted) 100%);
+    --shadow-gold:0 0 20px rgba(212, 168, 67, 0.15);
+    --shadow-gold-hover:0 0 30px rgba(212, 168, 67, 0.30);
+    --radius-xl:1.25rem;
+    --radius-lg:0.75rem;
+    --radius-md:0.5rem;
+  }
+
+  *{margin:0;padding:0;box-sizing:border-box}
+  body{
+    font-family:system-ui,-apple-system,sans-serif;
+    background:var(--bg);
+    color:var(--text);
+    line-height:1.7;
+    font-size:16px;
+    overflow-x:hidden;
+  }
+
+  /* ===== Typography ===== */
+  .font-display{font-family:'Space Grotesk',system-ui,-apple-system,sans-serif;font-weight:700}
+  h1{font-size:clamp(1.75rem,5vw,2.75rem);line-height:1.1}
+  h2{font-size:clamp(1.5rem,4vw,2rem);line-height:1.1}
+  h3{font-size:1.25rem;line-height:1.1}
+  h4{font-size:1.05rem}
+
+  a{color:inherit;text-decoration:none}
+  a:hover{color:var(--gold)}
+
+  /* ===== Layout ===== */
+  .container{max-width:1200px;margin:0 auto;padding:2rem 1rem}
+  .section{
+    margin:4rem 0;
+    padding:2.5rem;
+    background:var(--card);
+    border:1px solid var(--border-soft);
+    border-radius:var(--radius-xl);
+    transition:border-color .2s,box-shadow .2s;
+  }
+  .section:hover{border-color:var(--gold);box-shadow:var(--shadow-gold)}
+
+  /* ===== Header ===== */
+  header{
+    background:linear-gradient(135deg,#0f172a 0%,#1e293b 100%);
+    border-bottom:2px solid var(--gold);
+    padding:4rem 1rem;
+    text-align:center;
+  }
+  header h1{color:var(--gold);margin-bottom:.75rem;text-shadow:0 0 15px rgba(212,168,67,.1)}
+  header p{color:var(--muted);max-width:800px;margin:0 auto;font-size:1.125rem;line-height:1.6}
+
+  /* ===== Nav ===== */
+  nav{
+    background:var(--card);
+    border-bottom:1px solid var(--border);
+    padding:1rem;
+    position:sticky;top:0;z-index:100;
+    backdrop-filter:blur(10px);
+  }
+  nav ul{
+    list-style:none;
+    display:flex;
+    gap:1.5rem;
+    justify-content:center;
+    flex-wrap:wrap;
+  }
+  nav a{
+    color:var(--gold);
+    font-weight:600;
+    font-size:.95rem;
+    position:relative;
+    padding:.25rem 0;
+  }
+  nav a::after{
+    content:'';
+    position:absolute;
+    bottom:0;left:0;width:0;height:2px;
+    background:var(--gold);
+    transition:width .2s;
+  }
+  nav a:hover::after{width:100%}
+
+  /* ===== TOC ===== */
+  .toc{
+    background:var(--surface);
+    border:1px solid var(--border);
+    border-radius:var(--radius-lg);
+    padding:1.5rem;
+    margin:2rem 0;
+  }
+  .toc h3{color:var(--gold);margin-bottom:1rem}
+  .toc ul{list-style:none;padding-left:0}
+  .toc li{margin:.5rem 0}
+  .toc a{
+    color:var(--muted);
+    transition:color .2s;
+    display:flex;
+    align-items:center;
+    gap:.5rem;
+  }
+  .toc a:hover{color:var(--gold)}
+  .toc a::before{
+    content:'▸';
+    color:var(--gold);
+    transition:transform .2s;
+    font-size:.75rem;
+  }
+  .toc a:hover::before{transform:rotate(90deg)}
+
+  /* ===== Cards ===== */
+  .system-card{
+    background:var(--surface);
+    border:1px solid var(--border);
+    border-radius:var(--radius-lg);
+    padding:1.75rem;
+    margin:1.25rem 0;
+    transition:all .25s;
+  }
+  .system-card:hover{
+    transform:translateY(-3px);
+    border-color:var(--gold);
+    box-shadow:var(--shadow-gold-hover);
+  }
+  .system-card h3{
+    color:var(--gold);
+    margin-top:0;
+    display:flex;
+    align-items:center;
+    gap:.75rem;
+    margin-bottom:1.25rem;
+  }
+  .system-card .badge{
+    display:inline-flex;
+    align-items:center;
+    gap:.35rem;
+    padding:.25rem .75rem;
+    border-radius:999px;
+    font-size:.75rem;
+    font-weight:600;
+    background:rgba(212,168,67,.15);
+    color:var(--gold);
+  }
+
+  /* ===== Spec Grid ===== */
+  .spec-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
+    gap:1rem;
+    margin:1.5rem 0;
+  }
+  .spec-item{
+    background:var(--bg);
+    padding:1rem;
+    border-radius:var(--radius-md);
+    border:1px solid var(--border);
+    transition:border-color .2s;
+  }
+  .spec-item:hover{border-color:var(--gold)}
+  .spec-item strong{
+    color:var(--gold);
+    display:block;
+    margin-bottom:.25rem;
+    font-size:.85rem;
+    text-transform:uppercase;
+    letter-spacing:.5px;
+  }
+
+  /* ===== Tables ===== */
+  table{
+    width:100%;
+    border-collapse:collapse;
+    margin:1.5rem 0;
+    font-size:.95rem;
+    overflow:hidden;
+    border-radius:var(--radius-md);
+    border:1px solid var(--border);
+  }
+  th{
+    background:var(--bg);
+    color:var(--gold);
+    font-weight:600;
+    padding:.75rem;
+    text-align:left;
+    transition:background .2s;
+  }
+  th:hover{background:var(--gold);color:var(--bg)}
+  td{padding:.75rem;border-bottom:1px solid var(--border)}
+  tr:hover{background:rgba(212,168,67,.05)}
+
+  /* ===== Diagrams ===== */
+  .diagram-wrapper{
+    position:relative;
+    margin:1.5rem 0;
+  }
+  .diagram{
+    background:#0f172a;
+    border:2px solid var(--border);
+    border-radius:var(--radius-md);
+    padding:1.5rem;
+    margin:1.5rem 0;
+    font-family:monospace;
+    font-size:.825rem;
+    line-height:1.6;
+    overflow-x:auto;
+    color:#22d3ee;
+    position:relative;
+  }
+  .diagram-title{
+    color:var(--gold);
+    font-weight:700;
+    margin-bottom:.75rem;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    font-family:system-ui,sans-serif;
+    font-size:1.05rem;
+  }
+  .copy-btn{
+    display:inline-flex;
+    align-items:center;
+    gap:.35rem;
+    background:var(--gold);
+    color:var(--bg);
+    border:none;
+    padding:.35rem .75rem;
+    border-radius:var(--radius-md);
+    font-size:.75rem;
+    font-weight:600;
+    cursor:pointer;
+    transition:transform .15s,box-shadow .15s;
+  }
+  .copy-btn:hover{transform:scale(1.05);box-shadow:var(--shadow-gold)}
+
+  /* ===== Callouts ===== */
+  .callout{
+    background:#1a1a1a;
+    border-left:4px solid var(--gold);
+    padding:1rem 1.25rem;
+    margin:1.5rem 0;
+    border-radius:0 var(--radius-md) var(--radius-md) 0;
+    position:relative;
+  }
+  .callout::before{
+    content:'⚡';
+    position:absolute;
+    left:-12px;
+    top:50%;
+    transform:translateY(-50%);
+    font-size:1.5rem;
+    opacity:.5;
+  }
+  .callout.danger{border-left-color:var(--danger);background:rgba(239,68,68,.08)}
+  .callout.danger::before{content:'⚠'}
+  .callout.success{border-left-color:var(--success);background:rgba(34,197,94,.08)}
+  .callout.success::before{content:'✓'}
+
+  /* ===== Interactive Calculator ===== */
+  .calc-card{
+    background:linear-gradient(135deg,var(--surface) 0%,var(--bg) 100%);
+    border:2px dashed var(--border);
+    border-radius:var(--radius-xl);
+    padding:2rem;
+    margin:2rem 0;
+  }
+  .calc-card:hover{border-color:var(--gold);border-style:solid}
+  .calc-card h3{color:var(--gold);margin-bottom:1.5rem;text-align:center}
+  .calc-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+    gap:1.25rem;
+    margin-bottom:1.5rem;
+  }
+  .calc-field{
+    display:flex;
+    flex-direction:column;
+    gap:.4rem;
+  }
+  .calc-field label{
+    font-size:.8rem;
+    color:var(--muted);
+    font-weight:600;
+    text-transform:uppercase;
+    letter-spacing:.5px;
+  }
+  .calc-field input{
+    background:var(--bg);
+    border:1px solid var(--border);
+    border-radius:var(--radius-md);
+    padding:.75rem 1rem;
+    color:var(--text);
+    font-size:1rem;
+    transition:border-color .2s;
+  }
+  .calc-field input:focus{outline:none;border-color:var(--gold);box-shadow:var(--shadow-gold)}
+  .calc-result{
+    background:var(--bg);
+    border-radius:var(--radius-lg);
+    padding:1.5rem;
+    text-align:center;
+    border:2px solid var(--gold);
+  }
+  .calc-result .number{
+    font-size:2.5rem;
+    font-weight:700;
+    color:var(--gold);
+    font-family:'Space Grotesk',system-ui,sans-serif;
+  }
+  .calc-result .label{
+    color:var(--muted);
+    font-size:.85rem;
+    margin-top:.25rem;
+  }
+
+  /* ===== System Selector ===== */
+  .selector{
+    display:flex;
+    flex-wrap:gap:.75rem;
+    margin:1.5rem 0;
+  }
+  .selector-btn{
+    background:var(--surface);
+    border:1px solid var(--border);
+    color:var(--muted);
+    padding:.6rem 1.25rem;
+    border-radius:999px;
+    font-size:.9rem;
+    font-weight:500;
+    cursor:pointer;
+    transition:all .2s;
+    flex:1;
+    min-width:120px;
+  }
+  .selector-btn:hover{
+    background:var(--gold);
+    color:var(--bg);
+  }
+  .selector-btn.active{
+    background:var(--gold);
+    color:var(--bg);
+    box-shadow:var(--shadow-gold-hover);
+  }
+
+  /* ===== FAQ Accordion ===== */
+  .faq-item{
+    border-bottom:1px solid var(--border);
+    margin-bottom:.5rem;
+  }
+  .faq-question{
+    width:100%;
+    text-align:left;
+    padding:1rem;
+    background:none;
+    border:none;
+    color:var(--text);
+    font-size:1rem;
+    font-weight:500;
+    cursor:pointer;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    gap:1rem;
+  }
+  .faq-question:hover{color:var(--gold)}
+  .faq-question::after{
+    content:'▼';
+    transition:transform .2s;
+    font-size:.8rem;
+    color:var(--gold);
+  }
+  .faq-question.active::after{transform:rotate(-180deg)}
+  .faq-answer{
+    max-height:0;
+    overflow:hidden;
+    transition:max-height .3s ease;
+    color:var(--muted);
+  }
+  .faq-answer p{padding:0 1rem 1rem;font-size:.9rem}
+
+  /* ===== Nash Tech Integration ===== */
+  .nash-section{
+    background:linear-gradient(135deg,#0f172a 0%,#1e293b 100%);
+    border:1px solid var(--gold);
+    border-radius:var(--radius-xl);
+    padding:3rem;
+    margin:4rem 0;
+    text-align:center;
+    position:relative;
+    overflow:hidden;
+  }
+  .nash-section::before{
+    content:'';
+    position:absolute;
+    top:-50px;right:-50px;
+    width:200px;height:200px;
+    background:radial-gradient(circle,var(--gold) 0%,transparent 70%);
+    opacity:.08;
+    pointer-events:none;
+  }
+  .nash-section h2{color:var(--gold);margin-bottom:1rem}
+  .nash-section p{color:var(--muted);max-width:700px;margin:0 auto 2rem}
+  .cta-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
+    gap:1.25rem;
+    margin-top:2rem;
+  }
+  .cta-card{
+    background:var(--surface);
+    border:1px solid var(--border);
+    border-radius:var(--radius-lg);
+    padding:1.5rem;
+    transition:all .25s;
+  }
+  .cta-card:hover{
+    transform:translateY(-3px);
+    border-color:var(--gold);
+    box-shadow:var(--shadow-gold-hover);
+  }
+  .cta-card .icon{
+    font-size:2rem;
+    color:var(--gold);
+    margin-bottom:1rem;
+  }
+  .cta-card h3{color:var(--gold);margin-bottom:.5rem}
+  .cta-card p{color:var(--muted);font-size:.9rem}
+
+  /* ===== Sticky CTA ===== */
+  .sticky-cta{
+    position:fixed;
+    bottom:2rem;
+    right:2rem;
+    background:linear-gradient(135deg,var(--gold),var(--gold-muted));
+    color:var(--bg);
+    padding:1rem 1.5rem;
+    border-radius:var(--radius-xl);
+    box-shadow:0 10px 30px rgba(0,0,0,.4);
+    display:none;
+    align-items:center;
+    gap:1rem;
+    z-index:1000;
+    transition:transform .3s;
+  }
+  .sticky-cta.show{display:flex;transform:translateY(0)}
+  .sticky-cta.hide{transform:translateY(100px)}
+  .sticky-cta a{
+    color:var(--bg);
+    font-weight:700;
+    text-decoration:none;
+  }
+
+  /* ===== Footer ===== */
+  footer{
+    text-align:center;
+    padding:2.5rem 1rem;
+    color:var(--muted);
+    font-size:.9rem;
+    border-top:1px solid var(--border);
+    margin-top:3rem;
+  }
+
+  /* ===== Utility ===== */
+  .hidden{display:none}
+  .gradient-text{background:var(--accent);-webkit-background-clip:text;background-clip:text;color:transparent;font-weight:700}
+  .divider{
+    height:1px;
+    background:linear-gradient(90deg,transparent,var(--border),transparent);
+    margin:2rem 0;
+  }
 </style>
 </head>
 <body>
+
+<!-- ===== Header ===== -->
 <header>
-<h1>DIY Solar Power Systems Wiki</h1>
-<p>Build solar power systems from 100W portable rigs to 10kW+ home arrays. Complete blueprints, wiring diagrams, component specs, and safety guides for every skill level.</p>
+  <h1>DIY Solar Power Systems Wiki</h1>
+  <p>Build solar power systems from 100W portable rigs to 10kW+ home arrays. Complete blueprints, wiring diagrams, component specs, and safety guides for every skill level. Or let <span class="gradient-text">Nash Tech</span> handle it professionally.</p>
+</header>
+
+<nav>
+  <ul>
+    <li><a href="#fundamentals">Solar Fundamentals</a></li>
+    <li><a href="#components">Core Components</a></li>
+    <li><a href="#small">Small Systems (100W–500W)</a></li>
+    <li><a href="#medium">Medium Systems (500W–2kW)</a></li>
+    <li><a href="#large">Large Systems (2kW–10kW+)</a></li>
+    <li><a href="#calculator">Calculator</a></li>
+    <li><a href="#wiring">Wiring Diagrams</a></li>
+    <li><a href="#safety">Safety & Codes</a></li>
+    <li><a href="#faq">FAQ</a></li>
+    <li><a href="#nash-tech">Professional Installation</a></li>
+  </ul>
 </nav>
 
 <div class="container">
 
-<div class="toc">
-<h3>Table of Contents</h3>
-<ul>
-<li><a href="#fundamentals">Solar Fundamentals</a></li>
-<li><a href="#components">Core Components</a></li>
-<li><a href="#small">Small Systems (100W–500W)</a></li>
-<li><a href="#medium">Medium Systems (500W–2kW)</a></li>
-<li><a href="#large">Large Systems (2kW–10kW+)</a></li>
-<li><a href="#wiring">Wiring Diagrams</a></li>
-<li><a href="#safety">Safety & Codes</a></li>
-<li><a href="#troubleshooting">Troubleshooting</a></li>
-</ul>
-</div>
+  <!-- ===== TOC ===== -->
+  <div class="toc">
+    <h3>Table of Contents</h3>
+    <ul>
+      <li><a href="#fundamentals">Solar Fundamentals</a></li>
+      <li><a href="#components">Core Components — Panels, Batteries, Controllers, Inverters</a></li>
+      <li><a href="#small">Small Systems (100W–500W)</a></li>
+      <li><a href="#medium">Medium Systems (500W–2kW)</a></li>
+      <li><a href="#large">Large Systems (2kW–10kW+)</a></li>
+      <li><a href="#calculator">Interactive Solar Calculator</a></li>
+      <li><a href="#wiring">Wiring Diagrams & Specifications</a></li>
+      <li><a href="#safety">Safety & Electrical Codes</a></li>
+      <li><a href="#troubleshooting">Troubleshooting Guide</a></li>
+      <li><a href="#faq">Frequently Asked Questions</a></li>
+    </ul>
+  </div>
 
-<section id="fundamentals">
-<h2>Solar Fundamentals</h2>
-<p>Photovoltaic (PV) systems convert sunlight into electricity using semiconductor materials. The core equation:</p>
-<pre><code>Watts = Volts × Amps
+  <!-- ===== Fundamentals ===== -->
+  <section id="fundamentals">
+    <h2>Solar Fundamentals</h2>
+    <p>Photovoltaic (PV) systems convert sunlight into electricity using semiconductor materials. The core equation:</p>
+    <pre><code>Watts = Volts × Amps
 Daily Wh = Panel Watts × Sun Hours × System Efficiency (0.75)</code></pre>
-<div class="callout">
-<strong>Example:</strong> A 400W panel in Jamaica (5.5 peak sun hours) produces:
-400W × 5.5h × 0.75 = <strong>1,650Wh/day</strong>
-</div>
+    <div class="callout">
+      <strong>Jamaica Solar Irradiance:</strong> Average 5.0–5.5 peak sun hours across Manchester Parish. A 400W panel produces:
+      400W × 5.5h × 0.75 = <strong>1,650Wh/day</strong>
+    </div>
 
-<h3>System Types</h3>
-<table>
-<tr><th>Type</th><th>Description</th><th>Best For</th><th>Cost Range (USD)</th></tr>
-<tr><td>Portable</td><td>Panel + battery + controller, no wiring</td><td>Camping, charging devices</td><td>$50–$200</td></tr>
-<tr><td>Off-Grid</td><td>Full standalone system with battery bank</td><td>Remote locations, cabins</td><td>$500–$15,000</td></tr>
-<tr><td>Grid-Tied</td><td>Solar + inverter tied to utility</td><td>Homes, businesses</td><td>$2,000–$25,000</td></tr>
-<tr><td>Hybrid</td><td>Grid-tied + battery backup</td><td>Backup power, load shifting</td><td>$3,000–$30,000</td></tr>
-</table>
-</section>
+    <h3>System Types</h3>
+    <table>
+      <tr><th>Type</th><th>Description</th><th>Best For</th><th>Cost Range (USD)</th></tr>
+      <tr><td>Portable</td><td>Panel + battery + controller, no wiring</td><td>Camping, charging devices</td><td>$50–$200</td></tr>
+      <tr><td>Off-Grid</td><td>Full standalone system with battery bank</td><td>Remote locations, cabins</td><td>$500–$15,000</td></tr>
+      <tr><td>Grid-Tied</td><td>Solar + inverter tied to utility</td><td>Homes, businesses</td><td>$2,000–$25,000</td></tr>
+      <tr><td>Hybrid</td><td>Grid-tied + battery backup</td><td>Backup power, load shifting</td><td>$3,000–$30,000</td></tr>
+    </table>
+  </section>
 
-<section id="components">
-<h2>Core Components</h2>
+  <!-- ===== Components ===== -->
+  <section id="components">
+    <h2>Core Components</h2>
 
-<h3>Solar Panels</h3>
-<table>
-<tr><th>Type</th><th>Efficiency</th><th>Cost/Watt</th><th>Lifespan</th><th>Best Use</th></tr>
-<tr><td>Monocrystalline</td><td>19–24%</td><td>$0.70–$1.20</td><td>25–30 years</td><td>Limited space, max output</td></tr>
-<tr><td>Polycrystalline</td><td>15–19%</td><td>$0.50–$0.90</td><td>20–25 years</td><td>Large arrays, budget builds</td></tr>
-<tr><td>Thin-Film (CdTe)</td><td>10–13%</td><td>$0.40–$0.70</td><td>15–20 years</td><td>Flexible installs, low light</td></tr>
-<tr><td>Bifacial</td><td>20–25%</td><td>$0.80–$1.40</td><td>25–30 years</td><td>Ground mounts, albedo surfaces</td></tr>
-</table>
+    <h3>Solar Panels</h3>
+    <table>
+      <tr><th>Type</th><th>Efficiency</th><th>Cost/Watt</th><th>Lifespan</th><th>Best Use</th></tr>
+      <tr><td>Monocrystalline</td><td>19–24%</td><td>$0.70–$1.20</td><td>25–30 years</td><td>Limited space, max output</td></tr>
+      <tr><td>Polycrystalline</td><td>15–19%</td><td>$0.50–$0.90</td><td>20–25 years</td><td>Large arrays, budget builds</td></tr>
+      <tr><td>Thin-Film (CdTe)</td><td>10–13%</td><td>$0.40–$0.70</td><td>15–20 years</td><td>Flexible installs, low light</td></tr>
+      <tr><td>Bifacial</td><td>20–25%</td><td>$0.80–$1.40</td><td>25–30 years</td><td>Ground mounts, albedo surfaces</td></tr>
+    </table>
 
-<div class="callout success">
-<strong>Recommendation:</strong> Use monocrystalline for all DIY builds under 2kW. Bifacial only for ground-mount large arrays with reflective surfaces.
-</div>
+    <div class="callout success">
+      <strong>Recommendation:</strong> Use monocrystalline for all DIY builds under 2kW. Bifacial only for ground-mount large arrays with reflective surfaces.
+    </div>
 
-<h3>Batteries</h3>
-<table>
-<tr><th>Type</th><th>Voltage</th><th>Cycle Life</th><th>DoD</th><th>Cost/kWh</th><th>Best For</th></tr>
-<tr><td>LiFePO4</td><td>12V, 24V, 48V</td><td>3,000–7,000</td><td>80–90%</td><td>$300–$600</td><td>All modern builds</td></tr>
-<tr><td>Lithium-ion (NMC)</td><td>12V, 24V</td><td>2,000–4,000</td><td>70–80%</td><td>$400–$800</td><td>Weight-sensitive builds</td></tr>
-<tr><td>AGM/Gel (Lead-Acid)</td><td>12V, 6V</td><td>300–500</td><td>50% max</td><td>$150–$300</td><td>Budget off-grid only</td></tr>
-<tr><td>Flooded Lead-Acid</td><td>6V, 12V</td><td>200–300</td><td>50% max</td><td>$100–$200</td><td>Large stationary banks</td></tr>
-</table>
+    <h3>Batteries</h3>
+    <table>
+      <tr><th>Type</th><th>Voltage</th><th>Cycle Life</th><th>DoD</th><th>Cost/kWh</th><th>Best For</th></tr>
+      <tr><td>LiFePO4</td><td>12V, 24V, 48V</td><td>3,000–7,000</td><td>80–90%</td><td>$300–$600</td><td>All modern builds</td></tr>
+      <tr><td>Lithium-ion (NMC)</td><td>12V, 24V</td><td>2,000–4,000</td><td>70–80%</td><td>$400–$800</td><td>Weight-sensitive builds</td></tr>
+      <tr><td>AGM/Gel (Lead-Acid)</td><td>12V, 6V</td><td>300–500</td><td>50% max</td><td>$150–$300</td><td>Budget off-grid only</td></tr>
+      <tr><td>Flooded Lead-Acid</td><td>6V, 12V</td><td>200–300</td><td>50% max</td><td>$100–$200</td><td>Large stationary banks</td></tr>
+    </table>
 
-<div class="callout danger">
-<strong>Warning:</strong> Lead-acid batteries require ventilation, regular watering, and have short cycle life. LiFePO4 is recommended for all DIY builds.
-</div>
+    <div class="callout danger">
+      <strong>Warning:</strong> Lead-acid batteries require ventilation, regular watering, and have short cycle life. LiFePO4 is recommended for all DIY builds.
+    </div>
 
-<h3>Charge Controllers</h3>
-<table>
-<tr><th>Type</th><th>Efficiency</th><th>Max Voc</th><th>Best For</th></tr>
-<tr><td>PWM</td><td>70–80%</td><td>30V</td><td>Small 12V systems only</td></tr>
-<tr><td>MPPT</td><td>95–99%</td><td>100V–150V</td><td>All 24V/48V systems</td></tr>
-</table>
+    <h3>Charge Controllers</h3>
+    <table>
+      <tr><th>Type</th><th>Efficiency</th><th>Max Voc</th><th>Best For</th></tr>
+      <tr><td>PWM</td><td>70–80%</td><td>30V</td><td>Small 12V systems only</td></tr>
+      <tr><td>MPPT</td><td>95–99%</td><td>100V–150V</td><td>All 24V/48V systems</td></tr>
+    </table>
 
-<h3>Inverters</h3>
-<table>
-<tr><th>Type</th><th>THD</th><th>Best For</th></tr>
-<tr><td>Pure Sine Wave</td><td><3%</td><td>Sensitive electronics, appliances</td></tr>
-<tr><td>Modified Sine Wave</td><td>~30%</td><td>Basic resistive loads only</td></tr>
-</table>
-</section>
+    <h3>Inverters</h3>
+    <table>
+      <tr><th>Type</th><th>THD</th><th>Best For</th></tr>
+      <tr><td>Pure Sine Wave</td><td>&lt;3%</td><td>Sensitive electronics, appliances</td></tr>
+      <tr><td>Modified Sine Wave</td><td>~30%</td><td>Basic resistive loads only</td></tr>
+    </table>
+  </section>
 
-<section id="small">
-<h2>Small Systems (100W–500W)</h2>
-<p>Ideal for camping, sheds, tiny homes, RV, and device charging.</p>
+  <!-- ===== Calculator ===== -->
+  <section id="calculator">
+    <div class="calc-card">
+      <h3>⚡ Interactive Solar Calculator</h3>
+      <p style="text-align:center;color:var(--muted);margin-bottom:1.5rem">Estimate your daily energy production and system cost for Jamaica conditions.</p>
+      <div class="calc-grid">
+        <div class="calc-field">
+          <label for="panel-watt">Panel Wattage</label>
+          <input type="number" id="panel-watt" value="400" min="50" step="10">
+        </div>
+        <div class="calc-field">
+          <label for="panel-count">Number of Panels</label>
+          <input type="number" id="panel-count" value="4" min="1" step="1">
+        </div>
+        <div class="calc-field">
+          <label for="sun-hours">Peak Sun Hours</label>
+          <input type="number" id="sun-hours" value="5.5" min="3" max="7" step=".1">
+        </div>
+        <div class="calc-field">
+          <label for="efficiency">System Efficiency</label>
+          <input type="number" id="efficiency" value="75" min="50" max="95" step="1">
+        </div>
+      </div>
+      <div class="calc-result">
+        <div class="number" id="daily-wh">8,800</div>
+        <div class="label">Wh / day estimated production</div>
+        <div style="margin-top:1rem;border-top:1px solid var(--border);padding-top:1rem">
+          <div class="number" id="cost-usd">$1,800</div>
+          <div class="label">Estimated system cost (at $0.80/W)</div>
+        </div>
+      </div>
+    </div>
+  </section>
 
-<div class="system-card">
-<h3>100W Portable Kit</h3>
-<div class="spec-grid">
-<div class="spec-item"><strong>Panel</strong>1× 100W monocrystalline, 18V Voc ~22V</div>
-<div class="spec-item"><strong>Battery</strong>1× 12V 50Ah LiFePO4 (~640Wh usable)</div>
-<div class="spec-item"><strong>Controller</strong>10A MPPT</div>
-<div class="spec-item"><strong>Inverter</strong>150W pure sine wave (optional)</div>
-<div class="spec-item"><strong>Wiring</strong>16 AWG PV, 12 AWG battery</div>
-<div class="spec-item"><strong>Output</strong>~400Wh/day (Jamaica)</div>
-<div class="spec-item"><strong>Cost</strong>$150–$250</div>
-<div class="spec-item"><strong>Runtime</strong>Phone/laptop charging, LED lights, 12V cooler</div>
-</div>
-<div class="diagram">
-<div class="diagram-title">100W Portable System Wiring</div>
-[PANEL 100W 18V]
-   |
-   |--- 16 AWG ---+
+  <!-- ===== Small Systems ===== -->
+  <section id="small">
+    <h2>Small Systems (100W–500W)</h2>
+    <p>Ideal for camping, sheds, tiny homes, RV, and device charging.</p>
+
+    <div class="system-card">
+      <h3>100W Portable Kit <span class="badge">Portable</span></h3>
+      <div class="spec-grid">
+        <div class="spec-item"><strong>Panel</strong>1× 100W monocrystalline, 18V Voc ~22V</div>
+        <div class="spec-item"><strong>Battery</strong>1× 12V 50Ah LiFePO4 (~640Wh usable)</div>
+        <div class="spec-item"><strong>Controller</strong>10A MPPT</div>
+        <div class="spec-item"><strong>Inverter</strong>150W pure sine wave (optional)</div>
+        <div class="spec-item"><strong>Wiring</strong>16 AWG PV, 12 AWG battery</div>
+        <div class="spec-item"><strong>Output</strong>~400Wh/day (Jamaica)</div>
+        <div class="spec-item"><strong>Cost</strong>$150–$250</div>
+        <div class="spec-item"><strong>Runtime</strong>Phone/laptop charging, LED lights, 12V cooler</div>
+      </div>
+      <div class="diagram-wrapper">
+        <div class="diagram-title">
+          100W Portable System Wiring
+          <button class="copy-btn" onclick="copyDiagram('diag-100w')">Copy</button>
+        </div>
+        <div class="diagram" id="diag-100w">[PANEL 100W 18V]
+  |
+  |--- 16 AWG ---+
                  |
              [MPPT 10A]
                  |
@@ -165,27 +667,30 @@ Daily Wh = Panel Watts × Sun Hours × System Efficiency (0.75)</code></pre>
                  |               |
                  +-------+-------+
                          |
-                    [USB/AC OUTLETS]
-</div>
-</div>
+                    [USB/AC OUTLETS]</div>
+      </div>
+    </div>
 
-<div class="system-card">
-<h3>500W Shed/Garden System</h3>
-<div class="spec-grid">
-<div class="spec-item"><strong>Panels</strong>2× 250W monocrystalline, series (36V Voc)</div>
-<div class="spec-item"><strong>Battery</strong>1× 12V 100Ah LiFePO4 (~1.28kWh usable)</div>
-<div class="spec-item"><strong>Controller</strong>20A MPPT 12V</div>
-<div class="spec-item"><strong>Inverter</strong>500W pure sine wave</div>
-<div class="spec-item"><strong>Wiring</strong>14 AWG PV, 10 AWG battery</div>
-<div class="spec-item"><strong>Fusing</strong>30A DC breaker, 10A AC fuse</div>
-<div class="spec-item"><strong>Output</strong>~2kWh/day</div>
-<div class="spec-item"><strong>Cost</strong>$350–$600</div>
-</div>
-<div class="diagram">
-<div class="diagram-title">500W Shed System Wiring</div>
-[PANEL 250W] + [PANEL 250W]  (Series = 36V)
-   |
-   |--- 14 AWG ---+
+    <div class="system-card">
+      <h3>500W Shed/Garden System <span class="badge">Off-Grid</span></h3>
+      <div class="spec-grid">
+        <div class="spec-item"><strong>Panels</strong>2× 250W monocrystalline, series (36V Voc)</div>
+        <div class="spec-item"><strong>Battery</strong>1× 12V 100Ah LiFePO4 (~1.28kWh usable)</div>
+        <div class="spec-item"><strong>Controller</strong>20A MPPT 12V</div>
+        <div class="spec-item"><strong>Inverter</strong>500W pure sine wave</div>
+        <div class="spec-item"><strong>Wiring</strong>14 AWG PV, 10 AWG battery</div>
+        <div class="spec-item"><strong>Fusing</strong>30A DC breaker, 10A AC fuse</div>
+        <div class="spec-item"><strong>Output</strong>~2kWh/day</div>
+        <div class="spec-item"><strong>Cost</strong>$350–$600</div>
+      </div>
+      <div class="diagram-wrapper">
+        <div class="diagram-title">
+          500W Shed System Wiring
+          <button class="copy-btn" onclick="copyDiagram('diag-500w')">Copy</button>
+        </div>
+        <div class="diagram" id="diag-500w">[PANEL 250W] + [PANEL 250W]  (Series = 36V)
+  |
+  |--- 14 AWG ---+
                  |
              [MPPT 20A]
                  |
@@ -195,36 +700,40 @@ Daily Wh = Panel Watts × Sun Hours × System Efficiency (0.75)</code></pre>
                  |               |
                  +-------+-------+
                          |
-                    [AC OUTLETS + DC 12V]
-</div>
-</div>
-</section>
+                    [AC OUTLETS + DC 12V]</div>
+      </div>
+    </div>
+  </section>
 
-<section id="medium">
-<h2>Medium Systems (500W–2kW)</h2>
-<p>For cabins, small homes, workshops, and off-grid living.</p>
+  <!-- ===== Medium Systems ===== -->
+  <section id="medium">
+    <h2>Medium Systems (500W–2kW)</h2>
+    <p>For cabins, small homes, workshops, and off-grid living.</p>
 
-<div class="system-card">
-<h3>1kW Cabin System</h3>
-<div class="spec-grid">
-<div class="spec-item"><strong>Panels</strong>4× 250W monocrystalline, 2s2p (36V Voc)</div>
-<div class="spec-item"><strong>Battery</strong>2× 12V 100Ah LiFePO4, parallel (24V, ~2.56kWh usable)</div>
-<div class="spec-item"><strong>Controller</strong>40A MPPT 24V</div>
-<div class="spec-item"><strong>Inverter</strong>2kW pure sine wave 24V</div>
-<div class="spec-item"><strong>Wiring</strong>12 AWG PV, 8 AWG battery</div>
-<div class="spec-item"><strong>Fusing</strong>50A DC breaker, 25A AC fuse</div>
-<div class="spec-item"><strong>Output</strong>~4–5kWh/day</div>
-<div class="spec-item"><strong>Cost</strong>$1,200–$2,200</div>
-</div>
-<div class="diagram">
-<div class="diagram-title">1kW Cabin System (24V)</div>
-[PANEL 250W] + [PANEL 250W]  (Series A: 36V)
-   |                        |
-   +--------[STRING A]------+
-   |                        |
+    <div class="system-card">
+      <h3>1kW Cabin System <span class="badge">24V</span></h3>
+      <div class="spec-grid">
+        <div class="spec-item"><strong>Panels</strong>4× 250W monocrystalline, 2s2p (36V Voc)</div>
+        <div class="spec-item"><strong>Battery</strong>2× 12V 100Ah LiFePO4, parallel (24V, ~2.56kWh usable)</div>
+        <div class="spec-item"><strong>Controller</strong>40A MPPT 24V</div>
+        <div class="spec-item"><strong>Inverter</strong>2kW pure sine wave 24V</div>
+        <div class="spec-item"><strong>Wiring</strong>12 AWG PV, 8 AWG battery</div>
+        <div class="spec-item"><strong>Fusing</strong>50A DC breaker, 25A AC fuse</div>
+        <div class="spec-item"><strong>Output</strong>~4–5kWh/day</div>
+        <div class="spec-item"><strong>Cost</strong>$1,200–$2,200</div>
+      </div>
+      <div class="diagram-wrapper">
+        <div class="diagram-title">
+          1kW Cabin System (24V)
+          <button class="copy-btn" onclick="copyDiagram('diag-1kw')">Copy</button>
+        </div>
+        <div class="diagram" id="diag-1kw">[PANEL 250W] + [PANEL 250W]  (Series A: 36V)
+  |                        |
+  +--------[STRING A]--+
+  |                        |
 [PANEL 250W] + [PANEL 250W]  (Series B: 36V)
-   |                        |
-   +--------[STRING B]------+
+  |                        |
+  +--------[STRING B]--+
              |
          [COMBINER]
              |
@@ -236,80 +745,85 @@ Daily Wh = Panel Watts × Sun Hours × System Efficiency (0.75)</code></pre>
              |               |
              +-------+-------+
                      |
-                [AC PANEL]
-</div>
-</div>
+                [AC PANEL]</div>
+      </div>
+    </div>
 
-<div class="system-card">
-<h3>2kW Workshop System</h3>
-<div class="spec-grid">
-<div class="spec-item"><strong>Panels</strong>8× 250W monocrystalline, 4s2p (72V Voc)</div>
-<div class="spec-item"><strong>Battery</strong>4× 12V 100Ah LiFePO4, 2s2p (24V, ~5.12kWh usable)</div>
-<div class="spec-item"><strong>Controller</strong>80A MPPT 24V</div>
-<div class="spec-item"><strong>Inverter</strong>3kW pure sine wave 24V</div>
-<div class="spec-item"><strong>Wiring</strong>10 AWG PV, 6 AWG battery</div>
-<div class="spec-item"><strong>Fusing</strong>100A DC breaker, 40A AC fuse</div>
-<div class="spec-item"><strong>Output</strong>~8–10kWh/day</div>
-<div class="spec-item"><strong>Cost</strong>$2,500–$4,500</div>
-</div>
-</div>
-</section>
+    <div class="system-card">
+      <h3>2kW Workshop System <span class="badge">24V</span></h3>
+      <div class="spec-grid">
+        <div class="spec-item"><strong>Panels</strong>8× 250W monocrystalline, 4s2p (72V Voc)</div>
+        <div class="spec-item"><strong>Battery</strong>4× 12V 100Ah LiFePO4, 2s2p (24V, ~5.12kWh usable)</div>
+        <div class="spec-item"><strong>Controller</strong>80A MPPT 24V</div>
+        <div class="spec-item"><strong>Inverter</strong>3kW pure sine wave 24V</div>
+        <div class="spec-item"><strong>Wiring</strong>10 AWG PV, 6 AWG battery</div>
+        <div class="spec-item"><strong>Fusing</strong>100A DC breaker, 40A AC fuse</div>
+        <div class="spec-item"><strong>Output</strong>~8–10kWh/day</div>
+        <div class="spec-item"><strong>Cost</strong>$2,500–$4,500</div>
+      </div>
+    </div>
+  </section>
 
-<section id="large">
-<h2>Large Systems (2kW–10kW+)</h2>
-<p>Full home power, commercial buildings, microgrid-ready.</p>
+  <!-- ===== Large Systems ===== -->
+  <section id="large">
+    <h2>Large Systems (2kW–10kW+)</h2>
+    <p>Full home power, commercial buildings, microgrid-ready.</p>
 
-<div class="system-card">
-<h3>5kW Home System</h3>
-<div class="spec-grid">
-<div class="spec-item"><strong>Panels</strong>14× 400W monocrystalline, 7s2p (84V Voc)</div>
-<div class="spec-item"><strong>Battery</strong>8× 12V 100Ah LiFePO4, 4s2p (48V, ~20.5kWh usable)</div>
-<div class="spec-item"><strong>Controller</strong>2× 80A MPPT 48V</div>
-<div class="spec-item"><strong>Inverter</strong>8kW pure sine wave 48V</div>
-<div class="spec-item"><strong>Wiring</strong>8 AWG PV, 4 AWG battery</div>
-<div class="spec-item"><strong>Fusing</strong>150A DC breaker, 80A AC fuse</div>
-<div class="spec-item"><strong>Output</strong>~20–25kWh/day</div>
-<div class="spec-item"><strong>Cost</strong>$8,000–$15,000</div>
-</div>
-<div class="callout">
-<strong>Grid-Tied Add-On:</strong> Add a grid-tie inverter or hybrid inverter to sell excess power back to Jamaica Public Service (JPS).
-</div>
-</div>
+    <div class="system-card">
+      <h3>5kW Home System <span class="badge">48V</span></h3>
+      <div class="spec-grid">
+        <div class="spec-item"><strong>Panels</strong>14× 400W monocrystalline, 7s2p (84V Voc)</div>
+        <div class="spec-item"><strong>Battery</strong>8× 12V 100Ah LiFePO4, 4s2p (48V, ~20.5kWh usable)</div>
+        <div class="spec-item"><strong>Controller</strong>2× 80A MPPT 48V</div>
+        <div class="spec-item"><strong>Inverter</strong>8kW pure sine wave 48V</div>
+        <div class="spec-item"><strong>Wiring</strong>8 AWG PV, 4 AWG battery</div>
+        <div class="spec-item"><strong>Fusing</strong>150A DC breaker, 80A AC fuse</div>
+        <div class="spec-item"><strong>Output</strong>~20–25kWh/day</div>
+        <div class="spec-item"><strong>Cost</strong>$8,000–$15,000</div>
+      </div>
+      <div class="callout">
+        <strong>Grid-Tied Add-On:</strong> Add a grid-tie inverter or hybrid inverter to sell excess power back to Jamaica Public Service (JPS).
+      </div>
+    </div>
 
-<div class="system-card">
-<h3>10kW+ Microgrid</h3>
-<div class="spec-grid">
-<div class="spec-item"><strong>Panels</strong>30× 400W bifacial, 10s3p (120V Voc)</div>
-<div class="spec-item"><strong>Battery</strong>16× 12V 100Ah LiFePO4, 4s4p (48V, ~41kWh usable)</div>
-<div class="spec-item"><strong>Controller</strong>4× 80A MPPT 48V</div>
-<div class="spec-item"><strong>Inverter</strong>15kW three-phase 48V</div>
-<div class="spec-item"><strong>Wiring</strong>6 AWG PV, 2 AWG battery, busbars</div>
-<div class="spec-item"><strong>Fusing</strong>250A DC breaker, 125A AC fuse</div>
-<div class="spec-item"><strong>Output</strong>~40–50kWh/day</div>
-<div class="spec-item"><strong>Cost</strong>$18,000–$35,000</div>
-</div>
-</div>
-</section>
+    <div class="system-card">
+      <h3>10kW+ Microgrid <span class="badge">48V 3-Phase</span></h3>
+      <div class="spec-grid">
+        <div class="spec-item"><strong>Panels</strong>30× 400W bifacial, 10s3p (120V Voc)</div>
+        <div class="spec-item"><strong>Battery</strong>16× 12V 100Ah LiFePO4, 4s4p (48V, ~41kWh usable)</div>
+        <div class="spec-item"><strong>Controller</strong>4× 80A MPPT 48V</div>
+        <div class="spec-item"><strong>Inverter</strong>15kW three-phase 48V</div>
+        <div class="spec-item"><strong>Wiring</strong>6 AWG PV, 2 AWG battery, busbars</div>
+        <div class="spec-item"><strong>Fusing</strong>250A DC breaker, 125A AC fuse</div>
+        <div class="spec-item"><strong>Output</strong>~40–50kWh/day</div>
+        <div class="spec-item"><strong>Cost</strong>$18,000–$35,000</div>
+      </div>
+    </div>
+  </section>
 
-<section id="wiring">
-<h2>Wiring Diagrams & Specifications</h2>
+  <!-- ===== Wiring ===== -->
+  <section id="wiring">
+    <h2>Wiring Diagrams &amp; Specifications</h2>
 
-<h3>Wire Gauge Chart (12V–48V DC)</h3>
-<table>
-<tr><th>Amps</th><th>12V Gauge</th><th>24V Gauge</th><th>48V Gauge</th><th>Max Length (10ft/3m)</th></tr>
-<tr><td>10A</td><td>14 AWG</td><td>16 AWG</td><td>18 AWG</td><td>50ft</td></tr>
-<tr><td>20A</td><td>10 AWG</td><td>12 AWG</td><td>14 AWG</td><td>30ft</td></tr>
-<tr><td>50A</td><td>6 AWG</td><td>8 AWG</td><td>10 AWG</td><td>15ft</td></tr>
-<tr><td>100A</td><td>2 AWG</td><td>4 AWG</td><td>6 AWG</td><td>8ft</td></tr>
-</table>
+    <h3>Wire Gauge Chart (12V–48V DC)</h3>
+    <table>
+      <tr><th>Amps</th><th>12V Gauge</th><th>24V Gauge</th><th>48V Gauge</th><th>Max Length (10ft/3m)</th></tr>
+      <tr><td>10A</td><td>14 AWG</td><td>16 AWG</td><td>18 AWG</td><td>50ft</td></tr>
+      <tr><td>20A</td><td>10 AWG</td><td>12 AWG</td><td>14 AWG</td><td>30ft</td></tr>
+      <tr><td>50A</td><td>6 AWG</td><td>8 AWG</td><td>10 AWG</td><td>15ft</td></tr>
+      <tr><td>100A</td><td>2 AWG</td><td>4 AWG</td><td>6 AWG</td><td>8ft</td></tr>
+    </table>
 
-<div class="callout danger">
-<strong>Fusing Rule:</strong> Always place DC breakers on both positive and negative lines between each major component. Fuse rating = 1.25 × continuous current.
-</div>
+    <div class="callout danger">
+      <strong>Fusing Rule:</strong> Always place DC breakers on both positive and negative lines between each major component. Fuse rating = 1.25 × continuous current.
+    </div>
 
-<div class="diagram">
-<div class="diagram-title">Standard System Layout (24V Example)</div>
-    [SOLAR ARRAY]
+    <div class="diagram-wrapper">
+      <div class="diagram-title">
+        Standard System Layout (24V Example)
+        <button class="copy-btn" onclick="copyDiagram('diag-standard')">Copy</button>
+      </div>
+      <div class="diagram" id="diag-standard">    [SOLAR ARRAY]
          |
     [DC DISCONNECT]
          |
@@ -318,49 +832,232 @@ Daily Wh = Panel Watts × Sun Hours × System Efficiency (0.75)</code></pre>
     [BATTERY BANK]
          |
     [DC LOADS]        [INVERTER]
-         |                  |
+     |                  |
       12V/24V           [AC PANEL]
                              |
-                        [AC LOADS]
-</div>
+                        [AC LOADS]</div>
+    </div>
 
-<h3>Grounding & Bonding</h3>
-<pre><code>Frame Ground:  6 AWG copper to ground rod
+    <h3>Grounding &amp; Bonding</h3>
+    <pre><code>Frame Ground:  6 AWG copper to ground rod
 Neutral Bond:  Only at main inverter (off-grid) or main panel (grid-tied)
 Lightning:     Surge Protective Device (SPD) on DC and AC sides</code></pre>
-</section>
+  </section>
 
-<section id="safety">
-<h2>Safety & Electrical Codes</h2>
-<div class="callout danger">
-<strong>Legal Notice:</strong> Grid-tied systems in Jamaica require JPS approval and licensed electrician sign-off. Off-grid systems still require electrical inspection. Always follow NEC/IEC standards.
+  <!-- ===== Troubleshooting ===== -->
+  <section id="troubleshooting">
+    <h2>Troubleshooting Guide</h2>
+    <table>
+      <tr><th>Symptom</th><th>Cause</th><th>Solution</th></tr>
+      <tr><td>Low voltage at battery</td><td>Panel shading, dirty glass, bad connection</td><td>Clean panels, check wiring, measure Voc</td></tr>
+      <tr><td>Battery not charging</td><td>Controller fault, wrong settings, dead battery</td><td>Check controller LED, verify battery type setting</td></tr>
+      <tr><td>Inverter beeping</td><td>Low battery, overload, overheating</td><td>Reduce load, check ventilation, measure voltage</td></tr>
+      <tr><td>System works in sun, not at night</td><td>Battery bank undersized</td><td>Add battery capacity or reduce evening load</td></tr>
+      <tr><td>High charge controller temp</td><td>Undersized wiring, poor airflow</td><td>Upgrade wire gauge, relocate controller</td></tr>
+    </table>
+  </section>
+
+  <!-- ===== FAQ ===== -->
+  <section id="faq">
+    <h2>Frequently Asked Questions</h2>
+
+    <div class="faq-item">
+      <button class="faq-question">Monocrystalline or polycrystalline panels? What's the real difference?
+        <span></span>
+      </button>
+      <div class="faq-answer">
+        <p>Monocrystalline panels use single-crystal silicon, giving 19–24% efficiency but higher cost ($0.70–$1.20/W). Polycrystalline uses melted silicon fragments, 15–19% efficiency, lower cost ($0.50–$0.90/W). For Jamaica's limited roof space, monocrystalline wins. For ground-mount or large roof areas, polycrystalline saves money with marginal efficiency loss.</p>
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <button class="faq-question">How many batteries do I need for 3 days of autonomy?
+        <span></span>
+      </button>
+      <div class="faq-answer">
+        <p>Calculate daily consumption first (list all appliances × hours used). Then: Battery Wh needed = Daily Wh × Days of Autonomy ÷ DoD. Example: 4kWh/day × 3 days ÷ 0.8 (80% DoD for LiFePO4) = 15kWh bank. At 48V: 15,000Wh ÷ 48V = 312.5Ah. Use 4× 12V 100Ah LiFePO4 in 4S1P = 48V 100Ah = 4.8kWh usable (add 3 more parallel strings for ~14.4kWh). Our calculator above simplifies this.</p>
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <button class="faq-question">MPPT vs PWM controller — does it matter for small 100W systems?
+        <span></span>
+      </button>
+      <div class="faq-answer">
+        <p>At 100W and 12V, PWM works fine and costs less. But MPPT controllers extract 10–30% more energy when panel voltage significantly exceeds battery voltage (e.g., 22V panel → 12V battery). For anything above 200W, or systems using 24V/48V batteries, MPPT is strongly recommended. The energy recovery pays for the controller in 1–2 years.</p>
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <button class="faq-question">Do I need a permit for a grid-tied solar system in Jamaica?
+        <span></span>
+      </button>
+      <div class="faq-answer">
+        <p>Yes. Grid-tied systems require JPS (Jamaica Public Service) approval and a licensed electrician's sign-off per the 2020 Electrical Code. Net billing applications must go through JPS's Renewable Energy Management System (REMS). Off-grid systems also require electrical inspection. DIY installations without permits risk insurance voidance and grid interconnection rejection.</p>
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <button class="faq-question">Can I mix old and new solar panels in the same array?
+        <span></span>
+      </button>
+      <div class="faq-answer">
+        <p>You can, but it reduces performance. Panels of different wattages, voltages, or ages create current mismatches — the weakest panel limits the entire string. With MPPT controllers, the impact is smaller (5–15% loss). With PWM, losses can reach 30–50%. Best practice: use identical panels (same model, same month of manufacture) in each string. If mixing is unavoidable, use separate charge controllers per panel type.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== Nash Tech Integration ===== -->
+  <section id="nash-tech">
+    <div class="nash-section">
+      <h2>Need Professional Installation?</h2>
+      <p>Nash Technologies provides certified solar installation across Mandeville and Manchester Parish, Jamaica. We handle everything from site survey to grid-tie approval — no DIY guesswork required.</p>
+
+      <div class="cta-grid">
+        <div class="cta-card">
+          <div class="icon">📋</div>
+          <h3>Site Assessment</h3>
+          <p>Free on-site evaluation of your roof, shade analysis, and energy audit. No obligation.</p>
+        </div>
+        <div class="cta-card">
+          <div class="icon">💰</div>
+          <h3>JPS Net Billing</h3>
+          <p>We handle the full REMS application and grid interconnection paperwork for you.</p>
+        </div>
+        <div class="cta-card">
+          <div class="icon">🛠️</div>
+          <h3>Full Installation</h3>
+          <p>Certified technicians, Tier-1 equipment, 15-year hardware warranty on all systems.</p>
+        </div>
+        <div class="cta-card">
+          <div class="icon">📞</div>
+          <h3>24/7 Support</h3>
+          <p>Call or WhatsApp for emergency repairs, maintenance, and system monitoring.</p>
+        </div>
+      </div>
+
+      <div style="margin-top:2.5rem">
+        <a href="https://nashtech.lovable.app/" target="_blank" style="display:inline-block;background:linear-gradient(135deg,var(--gold),var(--gold-muted));color:var(--bg);padding:1rem 2.5rem;border-radius:999px;font-weight:700;text-decoration:none;font-size:1.1rem;transition:all .2s;box-shadow:var(--shadow-gold-hover)">
+          Get Your Free Solar Quote →
+        </a>
+      </div>
+
+      <div style="margin-top:1.5rem;text-align:center">
+        <p style="color:var(--muted);font-size:.85rem">
+          📍 22 South Race Course Road, Mandeville, Manchester Parish, Jamaica<br>
+          📞 +1 876-339-6598 · microtuff@proton.me
+        </p>
+      </div>
+    </div>
+  </section>
+
 </div>
 
-<ul>
-<li><strong>Disconnects:</strong> Install DC disconnects between panels and controller, accessible within sight of array.</li>
-<li><strong>Labeling:</strong> Label all DC conductors with voltage and current ratings. Use UV-resistant labels.</li>
-<li><strong>Ventilation:</strong> Lead-acid battery rooms require 1 sq ft of ventilation per 50Ah. LiFePO4 can be indoors.</li>
-<li><strong>Fire Safety:</strong> Keep batteries away from combustibles. Install smoke detectors. Have Class ABC fire extinguisher.</li>
-<li><strong>PPE:</strong> Insulated gloves, safety glasses, arc-flash rated gear for systems over 48V.</li>
-</ul>
-</section>
-
-<section id="troubleshooting">
-<h2>Troubleshooting Guide</h2>
-<table>
-<tr><th>Symptom</th><th>Cause</th><th>Solution</th></tr>
-<tr><td>Low voltage at battery</td><td>Panel shading, dirty glass, bad connection</td><td>Clean panels, check wiring, measure Voc</td></tr>
-<tr><td>Battery not charging</td><td>Controller fault, wrong settings, dead battery</td><td>Check controller LED, verify battery type setting</td></tr>
-<tr><td>Inverter beeping</td><td>Low battery, overload, overheating</td><td>Reduce load, check ventilation, measure voltage</td></tr>
-<tr><td>System works in sun, not at night</td><td>Battery bank undersized</td><td>Add battery capacity or reduce evening load</td></tr>
-<tr><td>High charge controller temp</td><td>Undersized wiring, poor airflow</td><td>Upgrade wire gauge, relocate controller</td></tr>
-</table>
-</section>
-
+<!-- ===== Footer ===== -->
 <footer>
-Microtuff Solutions · Mandeville, Jamaica · 1(876) 803-6062 · microtuff@proton.me
-<br>© 2026 Microtuff Solutions. Authorized research and education only.
+  <p>Microtuff Solutions · Mandeville, Jamaica · 1(876) 803-6062 · microtuff@proton.me</p>
+  <p>&copy; 2026 Microtuff Solutions. Authorized research and education only.</p>
+  <p style="margin-top:0.5rem"><a href="https://nashtech.lovable.app/" target="_blank" style="color:var(--gold)">Nash Technologies — Professional Solar Installation</a></p>
 </footer>
 
+<!-- ===== Sticky CTA ===== -->
+<div class="sticky-cta" id="sticky-cta">
+  <span style="font-size:1.25rem">⚡</span>
+  <div style="display:flex;flex-direction:column">
+    <span style="font-weight:700">Need professional help?</span>
+    <span style="font-size:.85rem">Nash Tech installs in Mandeville</span>
+  </div>
+  <a href="https://nashtech.lovable.app/" target="_blank">Book now →</a>
+</div>
+
+<!-- ===== Scripts ===== -->
+<script>
+  // ===== Smooth Scroll =====
+  document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function(e) {
+      e.preventDefault();
+      const target = document.querySelector(this.getAttribute('href'));
+      if (target) {
+        target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }
+    });
+  });
+
+  // ===== Copy Diagram =====
+  function copyDiagram(id) {
+    const el = document.getElementById(id);
+    if (!el) return;
+    const text = el.textContent;
+    navigator.clipboard.writeText(text).then(() => {
+      const btn = event.target;
+      const original = btn.textContent;
+      btn.textContent = 'Copied!';
+      setTimeout(() => btn.textContent = original, 2000);
+    });
+  }
+
+  // ===== FAQ Accordion =====
+  document.querySelectorAll('.faq-question').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const isActive = btn.classList.contains('active');
+      document.querySelectorAll('.faq-question').forEach(b => {
+        b.classList.remove('active');
+        b.nextElementSibling.style.maxHeight = null;
+      });
+      if (!isActive) {
+        btn.classList.add('active');
+        const answer = btn.nextElementSibling;
+        answer.style.maxHeight = answer.scrollHeight + 'px';
+      }
+    });
+  });
+
+  // ===== System Selector =====
+  window.selectSystem = function(type) {
+    document.querySelectorAll('.system-card').forEach(card => {
+      card.classList.add('hidden');
+    });
+    document.querySelectorAll('.selector-btn').forEach(btn => {
+      btn.classList.remove('active');
+    });
+    document.querySelectorAll(`.system-card[data-type="${type}"]`).forEach(card => {
+      card.classList.remove('hidden');
+    });
+    event.target.classList.add('active');
+  };
+
+  // ===== Sticky CTA =====
+  window.addEventListener('scroll', () => {
+    const cta = document.getElementById('sticky-cta');
+    const nashSection = document.getElementById('nash-tech');
+    if (!cta || !nashSection) return;
+    const rect = nashSection.getBoundingClientRect();
+    if (rect.bottom > 0 && rect.top < window.innerHeight) {
+      cta.classList.remove('show');
+    } else {
+      cta.classList.add('show');
+    }
+  });
+
+  // ===== Solar Calculator =====
+  function calculateSolar() {
+    const panelWatt = parseFloat(document.getElementById('panel-watt').value) || 400;
+    const panelCount = parseInt(document.getElementById('panel-count').value) || 4;
+    const sunHours = parseFloat(document.getElementById('sun-hours').value) || 5.5;
+    const efficiency = parseFloat(document.getElementById('efficiency').value) || 75;
+
+    const dailyWh = panelWatt * panelCount * sunHours * (efficiency / 100);
+    const costUsd = panelWatt * panelCount * 0.80;
+
+    document.getElementById('daily-wh').textContent = dailyWh.toLocaleString() + ' Wh';
+    document.getElementById('cost-usd').textContent = '$' + costUsd.toLocaleString();
+  }
+
+  document.querySelectorAll('#panel-watt, #panel-count, #sun-hours, #efficiency').forEach(input => {
+    input.addEventListener('input', calculateSolar);
+  });
+
+  calculateSolar();
+</script>
 </body>
 </html>
