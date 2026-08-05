@@ -776,227 +776,22 @@ Daily Wh = Panel Watts × Sun Hours × System Efficiency (0.75)</code></pre>
 
   <!-- ===== Nash Tech Services ===== -->
 
-  <!-- ===== Device Charging Build Guide ===== -->
+
+  <!-- ===== Device Charging ===== -->
   <section id="device-charging" class="section">
     <h2 style="color:var(--gold);margin-bottom:1rem">DIY Device Charging Systems</h2>
     <p style="color:var(--muted);margin-bottom:1.5rem">
-      Step-by-step build guides for charging phones, laptops, Starlink Mini, and TVs with solar.
-    </p>
-
-    <h3 style="color:var(--gold);margin:2rem 0 1rem">Phone & Tablet Charging Kit</h3>
-    <div style="background:var(--surface);border:1px solid var(--border-soft);border-radius:var(--radius-lg);padding:1.25rem;margin-bottom:1.5rem">
-      <ul style="color:var(--muted);padding-left:1.25rem;line-height:1.8">
-        <li><strong>Panel:</strong> 20W monocrystalline USB panel</li>
-        <li><strong>Battery:</strong> 12V 7Ah LiFePO4 or 12V 18Ah lead-acid</li>
-        <li><strong>Controller:</strong> 10A PWM</li>
-        <li><strong>Output:</strong> 5V USB-A ports, 2.4A each</li>
-        <li><strong>What it powers:</strong> 2–3 phones per day, tablet, power bank</li>
-        <li><strong>Build time:</strong> 30 minutes</li>
-        <li><strong>Cost:</strong> ,000–,000 JMD</li>
-      </ul>
-    </div>
-
-    <h3 style="color:var(--gold);margin:2rem 0 1rem">Laptop Charging Station</h3>
-    <div style="background:var(--surface);border:1px solid var(--border-soft);border-radius:var(--radius-lg);padding:1.25rem;margin-bottom:1.5rem">
-      <ul style="color:var(--muted);padding-left:1.25rem;line-height:1.8">
-        <li><strong>Panel:</strong> 100W monocrystalline</li>
-        <li><strong>Battery:</strong> 12V 50Ah LiFePO4 (~640Wh usable)</li>
-        <li><strong>Controller:</strong> 20A MPPT</li>
-        <li><strong>Inverter:</strong> 300W pure sine wave</li>
-        <li><strong>What it powers:</strong> 1–2 laptops for 3–4 hours, plus phone charging</li>
-        <li><strong>Build time:</strong> 1–2 hours</li>
-        <li><strong>Cost:</strong> 5,000–5,000 JMD</li>
-      </ul>
-    </div>
-
-    <h3 style="color:var(--gold);margin:2rem 0 1rem">Starlink Mini Power System</h3>
-    <div style="background:var(--surface);border:1px solid var(--border-soft);border-radius:var(--radius-lg);padding:1.25rem;margin-bottom:1.5rem">
-      <ul style="color:var(--muted);padding-left:1.25rem;line-height:1.8">
-        <li><strong>Panel:</strong> 120W monocrystalline</li>
-        <li><strong>Battery:</strong> 12V 100Ah LiFePO4 (~1.2kWh usable)</li>
-        <li><strong>Controller:</strong> 20A–30A MPPT</li>
-        <li><strong>Inverter:</strong> 300W pure sine wave</li>
-        <li><strong>What it powers:</strong> Starlink Mini for 6–10 hours, plus phones/laptops</li>
-        <li><strong>Tip:</strong> Use DC-DC buck converter for higher efficiency instead of inverter</li>
-        <li><strong>Build time:</strong> 2–3 hours</li>
-        <li><strong>Cost:</strong> 0,000–00,000 JMD</li>
-      </ul>
-    </div>
-
-    <h3 style="color:var(--gold);margin:2rem 0 1rem">TV & Entertainment Setup</h3>
-    <div style="background:var(--surface);border:1px solid var(--border-soft);border-radius:var(--radius-lg);padding:1.25rem;margin-bottom:1.5rem">
-      <ul style="color:var(--muted);padding-left:1.25rem;line-height:1.8">
-        <li><strong>Panel:</strong> 150W monocrystalline</li>
-        <li><strong>Battery:</strong> 12V 100Ah LiFePO4</li>
-        <li><strong>Controller:</strong> 20A MPPT</li>
-        <li><strong>Inverter:</strong> 500W pure sine wave</li>
-        <li><strong>What it powers:</strong> 32–43 inch LED TV for 3–5 hours, plus soundbar</li>
-        <li><strong>Build time:</strong> 2 hours</li>
-        <li><strong>Cost:</strong> 0,000–5,000 JMD</li>
-      </ul>
-    </div>
-  </section>
-
-  <!-- ===== Calculator ===== -->
-  <section id="calculator">
-    <div class="calc-card">
-      <h3>⚡ Interactive Solar Calculator</h3>
-      <p style="text-align:center;color:var(--muted);margin-bottom:1.5rem">Estimate your daily energy production and system cost for Jamaica conditions.</p>
-      <div class="calc-grid">
-        <div class="calc-field">
-          <label for="panel-watt">Panel Wattage</label>
-          <input type="number" id="panel-watt" value="400" min="50" step="10">
-        </div>
-        <div class="calc-field">
-          <label for="panel-count">Number of Panels</label>
-          <input type="number" id="panel-count" value="4" min="1" step="1">
-        </div>
-        <div class="calc-field">
-          <label for="sun-hours">Peak Sun Hours</label>
-          <input type="number" id="sun-hours" value="5.5" min="3" max="7" step=".1">
-        </div>
-        <div class="calc-field">
-          <label for="efficiency">System Efficiency</label>
-          <input type="number" id="efficiency" value="75" min="50" max="95" step="1">
-        </div>
-      </div>
-      <div class="calc-result">
-        <div class="number" id="daily-wh">8,800</div>
-        <div class="label">Wh / day estimated production</div>
-        <div style="margin-top:1rem;border-top:1px solid var(--border);padding-top:1rem">
-          <div class="number" id="cost-usd">$1,800</div>
-          <div class="label">Estimated system cost (at $0.80/W)</div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-
-  <!-- ===== Wiring ===== -->
-  <section id="wiring">
-    <h2>Wiring Diagrams &amp; Specifications</h2>
-
-    <h3>Wire Gauge Chart (12V–48V DC)</h3>
-    <table>
-      <tr><th>Amps</th><th>12V Gauge</th><th>24V Gauge</th><th>48V Gauge</th><th>Max Length (10ft/3m)</th></tr>
-      <tr><td>10A</td><td>14 AWG</td><td>16 AWG</td><td>18 AWG</td><td>50ft</td></tr>
-      <tr><td>20A</td><td>10 AWG</td><td>12 AWG</td><td>14 AWG</td><td>30ft</td></tr>
-      <tr><td>50A</td><td>6 AWG</td><td>8 AWG</td><td>10 AWG</td><td>15ft</td></tr>
-      <tr><td>100A</td><td>2 AWG</td><td>4 AWG</td><td>6 AWG</td><td>8ft</td></tr>
-    </table>
-
-    <div class="callout danger">
-      <strong>Fusing Rule:</strong> Always place DC breakers on both positive and negative lines between each major component. Fuse rating = 1.25 × continuous current.
-    </div>
-
-    <div class="diagram-wrapper">
-      <div class="diagram-title">
-        Standard System Layout (24V Example)
-        <button class="copy-btn" onclick="copyDiagram('diag-standard')">Copy</button>
-      </div>
-      <div class="diagram" id="diag-standard">    [SOLAR ARRAY]
-         |
-    [DC DISCONNECT]
-         |
-    [CHARGE CONTROLLER]
-         |
-    [BATTERY BANK]
-         |
-    [DC LOADS]        [INVERTER]
-     |                  |
-      12V/24V           [AC PANEL]
-                             |
-                        [AC LOADS]</div>
-    </div>
-
-    <h3>Grounding &amp; Bonding</h3>
-    <pre><code>Frame Ground:  6 AWG copper to ground rod
-Neutral Bond:  Only at main inverter (off-grid) or main panel (grid-tied)
-Lightning:     Surge Protective Device (SPD) on DC and AC sides</code></pre>
-  </section>
-
-  <!-- ===== Troubleshooting ===== -->
-  <section id="troubleshooting">
-    <h2>Troubleshooting Guide</h2>
-    <table>
-      <tr><th>Symptom</th><th>Cause</th><th>Solution</th></tr>
-      <tr><td>Low voltage at battery</td><td>Panel shading, dirty glass, bad connection</td><td>Clean panels, check wiring, measure Voc</td></tr>
-      <tr><td>Battery not charging</td><td>Controller fault, wrong settings, dead battery</td><td>Check controller LED, verify battery type setting</td></tr>
-      <tr><td>Inverter beeping</td><td>Low battery, overload, overheating</td><td>Reduce load, check ventilation, measure voltage</td></tr>
-      <tr><td>System works in sun, not at night</td><td>Battery bank undersized</td><td>Add battery capacity or reduce evening load</td></tr>
-      <tr><td>High charge controller temp</td><td>Undersized wiring, poor airflow</td><td>Upgrade wire gauge, relocate controller</td></tr>
-    </table>
-  </section>
-
-  <!-- ===== FAQ ===== -->
-  <section id="faq">
-    <h2>Frequently Asked Questions</h2>
-
-    <div class="faq-item">
-      <button class="faq-question">Monocrystalline or polycrystalline panels? What's the real difference?
-        <span></span>
-      </button>
-      <div class="faq-answer">
-        <p>Monocrystalline panels use single-crystal silicon, giving 19–24% efficiency but higher cost ($0.70–$1.20/W). Polycrystalline uses melted silicon fragments, 15–19% efficiency, lower cost ($0.50–$0.90/W). For Jamaica's limited roof space, monocrystalline wins. For ground-mount or large roof areas, polycrystalline saves money with marginal efficiency loss.</p>
-      </div>
-    </div>
-
-    <div class="faq-item">
-      <button class="faq-question">How many batteries do I need for 3 days of autonomy?
-        <span></span>
-      </button>
-      <div class="faq-answer">
-        <p>Calculate daily consumption first (list all appliances × hours used). Then: Battery Wh needed = Daily Wh × Days of Autonomy ÷ DoD. Example: 4kWh/day × 3 days ÷ 0.8 (80% DoD for LiFePO4) = 15kWh bank. At 48V: 15,000Wh ÷ 48V = 312.5Ah. Use 4× 12V 100Ah LiFePO4 in 4S1P = 48V 100Ah = 4.8kWh usable (add 3 more parallel strings for ~14.4kWh). Our calculator above simplifies this.</p>
-      </div>
-    </div>
-
-    <div class="faq-item">
-      <button class="faq-question">MPPT vs PWM controller — does it matter for small 100W systems?
-        <span></span>
-      </button>
-      <div class="faq-answer">
-        <p>At 100W and 12V, PWM works fine and costs less. But MPPT controllers extract 10–30% more energy when panel voltage significantly exceeds battery voltage (e.g., 22V panel → 12V battery). For anything above 200W, or systems using 24V/48V batteries, MPPT is strongly recommended. The energy recovery pays for the controller in 1–2 years.</p>
-      </div>
-    </div>
-
-    <div class="faq-item">
-      <button class="faq-question">Do I need a permit for a grid-tied solar system in Jamaica?
-        <span></span>
-      </button>
-      <div class="faq-answer">
-        <p>Yes. Grid-tied systems require JPS (Jamaica Public Service) approval and a licensed electrician's sign-off per the 2020 Electrical Code. Net billing applications must go through JPS's Renewable Energy Management System (REMS). Off-grid systems also require electrical inspection. DIY installations without permits risk insurance voidance and grid interconnection rejection.</p>
-      </div>
-    </div>
-
-    <div class="faq-item">
-      <button class="faq-question">Can I mix old and new solar panels in the same array?
-        <span></span>
-      </button>
-      <div class="faq-answer">
-        <p>You can, but it reduces performance. Panels of different wattages, voltages, or ages create current mismatches — the weakest panel limits the entire string. With MPPT controllers, the impact is smaller (5–15% loss). With PWM, losses can reach 30–50%. Best practice: use identical panels (same model, same month of manufacture) in each string. If mixing is unavoidable, use separate charge controllers per panel type.</p>
-      </div>
-    </div>
-  </section>
-
-
-
-
-  <!-- ===== Device Charging Systems ===== -->
-  <section id="device-charging" class="section">
-    <h2 style="color:var(--gold);margin-bottom:1rem">DIY Device Charging Systems</h2>
-    <p style="color:var(--muted);margin-bottom:1.5rem">
-      Build simple solar setups to keep phones, laptops, Starlink Mini, and TVs powered. All designs use Jamaica’s ~5.0 peak sun hours.
+      Build simple solar setups to keep phones, laptops, Starlink Mini, and TVs powered. All designs use Jamaica's ~5.0 peak sun hours.
     </p>
 
     <h3 style="color:var(--gold);margin:2rem 0 1rem">Phone & Tablet Charging</h3>
     <div style="background:var(--surface);border:1px solid var(--border-soft);border-radius:var(--radius-lg);padding:1.25rem;margin-bottom:1.5rem">
       <ul style="color:var(--muted);padding-left:1.25rem;line-height:1.8">
-        <li><strong>Target load:</strong> 5–15W per device</li>
-        <li><strong>Minimum panel:</strong> 20W monocrystalline</li>
-        <li><strong>Battery:</strong> 12V 7Ah–18Ah lead-acid or LiFePO4</li>
-        <li><strong>Controller:</strong> 10A PWM or MPPT</li>
-        <li><strong>Inverter:</strong> 100W pure sine wave (for USB-C PD chargers)</li>
-        <li><strong>Runtime:</strong> 2–3 phones charged per day from a 7Ah battery</li>
+        <li><strong>Panel:</strong> 20W monocrystalline</li>
+        <li><strong>Battery:</strong> 12V 7Ah LiFePO4 or 12V 18Ah lead-acid</li>
+        <li><strong>Controller:</strong> 10A PWM</li>
+        <li><strong>Output:</strong> 5V USB-A ports</li>
+        <li><strong>Runtime:</strong> 2–3 phones charged per day</li>
         <li><strong>Cost estimate:</strong> ,000–,000 JMD</li>
       </ul>
     </div>
@@ -1004,12 +799,11 @@ Lightning:     Surge Protective Device (SPD) on DC and AC sides</code></pre>
     <h3 style="color:var(--gold);margin:2rem 0 1rem">Laptop Charging</h3>
     <div style="background:var(--surface);border:1px solid var(--border-soft);border-radius:var(--radius-lg);padding:1.25rem;margin-bottom:1.5rem">
       <ul style="color:var(--muted);padding-left:1.25rem;line-height:1.8">
-        <li><strong>Target load:</strong> 45–90W (standard laptops) or 100–150W (gaming/workstation)</li>
-        <li><strong>Minimum panel:</strong> 100W monocrystalline</li>
-        <li><strong>Battery:</strong> 12V 50Ah LiFePO4 recommended</li>
-        <li><strong>Controller:</strong> 20A MPPT for best efficiency</li>
+        <li><strong>Panel:</strong> 100W monocrystalline</li>
+        <li><strong>Battery:</strong> 12V 50Ah LiFePO4 (~640Wh usable)</li>
+        <li><strong>Controller:</strong> 20A MPPT</li>
         <li><strong>Inverter:</strong> 300W pure sine wave</li>
-        <li><strong>Runtime:</strong> 2–4 hours of laptop use per charge cycle</li>
+        <li><strong>Runtime:</strong> 2–4 hours laptop use per charge</li>
         <li><strong>Cost estimate:</strong> 5,000–0,000 JMD</li>
       </ul>
     </div>
@@ -1017,13 +811,11 @@ Lightning:     Surge Protective Device (SPD) on DC and AC sides</code></pre>
     <h3 style="color:var(--gold);margin:2rem 0 1rem">Starlink Mini</h3>
     <div style="background:var(--surface);border:1px solid var(--border-soft);border-radius:var(--radius-lg);padding:1.25rem;margin-bottom:1.5rem">
       <ul style="color:var(--muted);padding-left:1.25rem;line-height:1.8">
-        <li><strong>Target load:</strong> 35–75W average (idle to beam acquisition)</li>
-        <li><strong>Minimum panel:</strong> 120W monocrystalline</li>
-        <li><strong>Battery:</strong> 12V 100Ah LiFePO4 for overnight runtime</li>
+        <li><strong>Panel:</strong> 120W monocrystalline</li>
+        <li><strong>Battery:</strong> 12V 100Ah LiFePO4</li>
         <li><strong>Controller:</strong> 20A–30A MPPT</li>
         <li><strong>Inverter:</strong> 300W pure sine wave</li>
-        <li><strong>Runtime:</strong> 6–10 hours off-grid with 100Ah battery</li>
-        <li><strong>Tip:</strong> Use a DC-DC buck converter 48V→24V instead of an inverter for higher efficiency</li>
+        <li><strong>Runtime:</strong> 6–10 hours off-grid</li>
         <li><strong>Cost estimate:</strong> 0,000–20,000 JMD</li>
       </ul>
     </div>
@@ -1031,207 +823,15 @@ Lightning:     Surge Protective Device (SPD) on DC and AC sides</code></pre>
     <h3 style="color:var(--gold);margin:2rem 0 1rem">TV & Entertainment</h3>
     <div style="background:var(--surface);border:1px solid var(--border-soft);border-radius:var(--radius-lg);padding:1.25rem;margin-bottom:1.5rem">
       <ul style="color:var(--muted);padding-left:1.25rem;line-height:1.8">
-        <li><strong>Target load:</strong> 50–150W depending on screen size and type (LED much lower than old LCD)</li>
-        <li><strong>Minimum panel:</strong> 150W monocrystalline</li>
-        <li><strong>Battery:</strong> 12V 100Ah LiFePO4 for 2–4 hours viewing</li>
+        <li><strong>Panel:</strong> 150W monocrystalline</li>
+        <li><strong>Battery:</strong> 12V 100Ah LiFePO4</li>
         <li><strong>Controller:</strong> 20A MPPT</li>
         <li><strong>Inverter:</strong> 500W pure sine wave</li>
-        <li><strong>Runtime:</strong> 3–6 hours for 55-inch LED; longer for smaller screens</li>
+        <li><strong>Runtime:</strong> 3–6 hours for 55-inch LED</li>
         <li><strong>Cost estimate:</strong> 0,000–00,000 JMD</li>
       </ul>
     </div>
-
-    <h3 style="color:var(--gold);margin:2rem 0 1rem">Combined Setup: Phone + Laptop + TV + Starlink Mini</h3>
-    <div style="background:var(--surface);border:1px solid var(--border-soft);border-radius:var(--radius-lg);padding:1.25rem;margin-bottom:1.5rem">
-      <ul style="color:var(--muted);padding-left:1.25rem;line-height:1.8">
-        <li><strong>Minimum panel:</strong> 400W monocrystalline array</li>
-        <li><strong>Battery:</strong> 12V 200Ah LiFePO4</li>
-        <li><strong>Controller:</strong> 40A MPPT</li>
-        <li><strong>Inverter:</strong> 1000W pure sine wave</li>
-        <li><strong>Runtime:</strong> ~4–6 hours of mixed device use plus overnight Starlink + phone charging</li>
-        <li><strong>Cost estimate:</strong> 20,000–50,000 JMD</li>
-      </ul>
-    </div>
-
-    <div style="background:rgba(212,168,67,.08);border:1px solid var(--gold);border-radius:var(--radius-lg);padding:1.25rem;margin-top:1.5rem">
-      <strong style="color:var(--gold)">Pro tip:</strong>
-      <span style="color:var(--muted)"> Always oversize your panel and battery by 20–30%. Cloudy days happen, and you will thank yourself during the rainy season.</span>
-    </div>
   </section>
-
-  <!-- ===== Glossary ===== -->
-  <section id="glossary" class="section">
-    <h2 style="color:var(--gold);margin-bottom:1rem">Solar & Electrical Glossary</h2>
-    <p style="color:var(--muted);margin-bottom:1.5rem">
-      Simple definitions for the most common terms you will see on solar labels, invoices, and JPS net-billing paperwork.
-    </p>
-    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:1.25rem">
-      <div style="background:var(--surface);border:1px solid var(--border-soft);border-radius:var(--radius-lg);padding:1.25rem">
-        <h4 style="color:var(--gold);margin-bottom:.5rem">Watt (W)</h4>
-        <p style="color:var(--muted);font-size:.9rem">Unit of power. A 100W bulb uses 100 watts while it is on.</p>
-      </div>
-      <div style="background:var(--surface);border:1px solid var(--border-soft);border-radius:var(--radius-lg);padding:1.25rem">
-        <h4 style="color:var(--gold);margin-bottom:.5rem">Kilowatt (kW)</h4>
-        <p style="color:var(--muted);font-size:.9rem">1,000 watts. A 5 kW solar system produces 5,000 watts at peak sun.</p>
-      </div>
-      <div style="background:var(--surface);border:1px solid var(--border-soft);border-radius:var(--radius-lg);padding:1.25rem">
-        <h4 style="color:var(--gold);margin-bottom:.5rem">Kilowatt-hour (kWh)</h4>
-        <p style="color:var(--muted);font-size:.9rem">Unit of energy. Running a 1 kW heater for 1 hour = 1 kWh. JPS bills in kWh.</p>
-      </div>
-      <div style="background:var(--surface);border:1px solid var(--border-soft);border-radius:var(--radius-lg);padding:1.25rem">
-        <h4 style="color:var(--gold);margin-bottom:.5rem">Volt (V)</h4>
-        <p style="color:var(--muted);font-size:.9rem">Electrical pressure. Common solar systems use 12V, 24V, or 48V battery banks.</p>
-      </div>
-      <div style="background:var(--surface);border:1px solid var(--border-soft);border-radius:var(--radius-lg);padding:1.25rem">
-        <h4 style="color:var(--gold);margin-bottom:.5rem">Ampere / Amp (A)</h4>
-        <p style="color:var(--muted);font-size:.9rem">Flow rate of current. Wiring size and fuses are chosen based on amps.</p>
-      </div>
-      <div style="background:var(--surface);border:1px solid var(--border-soft);border-radius:var(--radius-lg);padding:1.25rem">
-        <h4 style="color:var(--gold);margin-bottom:.5rem">Amp-hour (Ah)</h4>
-        <p style="color:var(--muted);font-size:.9rem">Battery capacity. A 100Ah battery can deliver 5A for 20 hours.</p>
-      </div>
-      <div style="background:var(--surface);border:1px solid var(--border-soft);border-radius:var(--radius-lg);padding:1.25rem">
-        <h4 style="color:var(--gold);margin-bottom:.5rem">PSI</h4>
-        <p style="color:var(--muted);font-size:.9rem">Pounds per square inch. Used for water pressure and some pipe fittings.</p>
-      </div>
-      <div style="background:var(--surface);border:1px solid var(--border-soft);border-radius:var(--radius-lg);padding:1.25rem">
-        <h4 style="color:var(--gold);margin-bottom:.5rem">BTU</h4>
-        <p style="color:var(--muted);font-size:.9rem">British Thermal Unit. Heat energy measurement; relevant for water heating sizing.</p>
-      </div>
-      <div style="background:var(--surface);border:1px solid var(--border-soft);border-radius:var(--radius-lg);padding:1.25rem">
-        <h4 style="color:var(--gold);margin-bottom:.5rem">Peak Sun Hours</h4>
-        <p style="color:var(--muted);font-size:.9rem">Hours per day of sun intensity equal to 1,000 W/m². Jamaica averages 5.0–5.5.</p>
-      </div>
-      <div style="background:var(--surface);border:1px solid var(--border-soft);border-radius:var(--radius-lg);padding:1.25rem">
-        <h4 style="color:var(--gold);margin-bottom:.5rem">Inverter</h4>
-        <p style="color:var(--muted);font-size:.9rem">Converts DC battery power to AC for household appliances.</p>
-      </div>
-      <div style="background:var(--surface);border:1px solid var(--border-soft);border-radius:var(--radius-lg);padding:1.25rem">
-        <h4 style="color:var(--gold);margin-bottom:.5rem">Charge Controller</h4>
-        <p style="color:var(--muted);font-size:.9rem">Regulates charging from panels to batteries to prevent overcharge.</p>
-      </div>
-      <div style="background:var(--surface);border:1px solid var(--border-soft);border-radius:var(--radius-lg);padding:1.25rem">
-        <h4 style="color:var(--gold);margin-bottom:.5rem">Grid-Tied</h4>
-        <p style="color:var(--muted);font-size:.9rem">System connected to JPS lines. Allows net billing or net metering where excess is sold back.</p>
-      </div>
-    </div>
-  </section>
-
-  <!-- ===== Nash Tech Service Cards ===== -->
-  <section id="nash-services">
-    <div style="display:grid;grid-template-columns:1fr 1fr;gap:2rem;align-items:start">
-      <div style="cursor:pointer" onclick="window.open('https://nashtech.lovable.app/','_blank')">
-        <h2 style="color:var(--gold);margin-bottom:1rem">Nash Technologies</h2>
-        <p style="color:var(--muted);margin-bottom:1.5rem">
-          Professional solar installation, maintenance, and JPS net-billing support. Certified technicians, Tier-1 equipment, and 15-year hardware warranties on all systems.
-        </p>
-        <div class="cta-grid">
-          <div class="cta-card">
-            <div class="icon">📋</div>
-            <h3>Site Assessment</h3>
-            <p>Free on-site evaluation of your roof, shade analysis, and energy audit. No obligation.</p>
-          </div>
-          <div class="cta-card">
-            <div class="icon">💰</div>
-            <h3>JPS Net Billing</h3>
-            <p>We handle the full REMS application and grid interconnection paperwork for you.</p>
-          </div>
-          <div class="cta-card">
-            <div class="icon">🛠️</div>
-            <h3>Full Installation</h3>
-            <p>Certified technicians, Tier-1 equipment, 15-year hardware warranty on all systems.</p>
-          </div>
-          <div class="cta-card">
-            <div class="icon">📞</div>
-            <h3>24/7 Support</h3>
-            <p>Call or WhatsApp for emergency repairs, maintenance, and system monitoring.</p>
-          </div>
-        </div>
-      </div>
-      <div style="cursor:pointer" onclick="window.open('https://kronodin.github.io/microtuff-site/contact/','_blank')">
-        <h2 style="color:var(--gold);margin-bottom:1rem">Microtuff Solutions</h2>
-        <p style="color:var(--muted);margin-bottom:1.5rem">
-          Security research, pentesting, and cybersecurity consulting across Jamaica. We also provide hardware, FRP removal, and digital forensics services.
-        </p>
-        <div class="cta-grid">
-          <div class="cta-card">
-            <div class="icon">🔐</div>
-            <h3>Penetration Testing</h3>
-            <p>Full-scope security assessments for networks, web apps, and mobile platforms.</p>
-          </div>
-          <div class="cta-card">
-            <div class="icon">🛡️</div>
-            <h3>Red Team Engagements</h3>
-            <p>Adversary emulation, social engineering, and incident response exercises.</p>
-          </div>
-          <div class="cta-card">
-            <div class="icon">🔧</div>
-            <h3>Hardware & FRP Removal</h3>
-            <p>Phone unlocking, FRP bypass, and hardware sales for tech professionals.</p>
-          </div>
-          <div class="cta-card">
-            <div class="icon">📡</div>
-            <h3>OSINT & Recon</h3>
-            <p>Open-source intelligence, domain recon, and digital footprint analysis.</p>
-          </div>
-        </div>
-        <div style="margin-top:1.5rem;padding:1.25rem;background:var(--surface);border:1px solid var(--border);border-radius:var(--radius-lg)">
-          <div style="color:var(--gold);font-weight:700;margin-bottom:.5rem">Microtuff Contact</div>
-          <div style="color:var(--muted);font-size:.9rem">
-            1(876) 803-6062 · microtuff@proton.me<br>
-            Mandeville, Jamaica
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-
-  <!-- ===== Nash Tech Integration ===== -->
-  <section id="nash-tech">
-    <div class="nash-section">
-      <h2>Need Professional Installation?</h2>
-      <p>Nash Technologies provides certified solar installation across Jamaica. We handle everything from site survey to grid-tie approval — no DIY guesswork required.</p>
-
-      <div class="cta-grid">
-        <div class="cta-card">
-          <div class="icon">📋</div>
-          <h3>Site Assessment</h3>
-          <p>Free islandwide remote assessment, plus on-site evaluation in select parishes. No obligation.</p>
-        </div>
-        <div class="cta-card">
-          <div class="icon">💰</div>
-          <h3>JPS Net Billing</h3>
-          <p>We handle the full REMS application and grid interconnection paperwork for you.</p>
-        </div>
-        <div class="cta-card">
-          <div class="icon">🛠️</div>
-          <h3>Full Installation</h3>
-          <p>Certified technicians, Tier-1 equipment, 15-year hardware warranty on all systems.</p>
-        </div>
-        <div class="cta-card">
-          <div class="icon">📞</div>
-          <h3>24/7 Support</h3>
-          <p>Call or WhatsApp for emergency repairs, maintenance, and system monitoring.</p>
-        </div>
-      </div>
-
-      <div style="margin-top:2.5rem">
-        <a href="https://nashtech.lovable.app/" target="_blank" style="display:inline-block;background:linear-gradient(135deg,var(--gold),var(--gold-muted));color:var(--bg);padding:1rem 2.5rem;border-radius:999px;font-weight:700;text-decoration:none;font-size:1.1rem;transition:all .2s;box-shadow:var(--shadow-gold-hover)" onmouseover="this.style.transform='scale(1.05)'" onmouseout="this.style.transform='scale(1)'">
-          Get Your Free Solar Quote →
-        </a>
-      </div>
-
-      <div style="margin-top:1.5rem;text-align:center">
-        <p style="color:var(--muted);font-size:.85rem">
-          📍 Serving all 14 parishes across Jamaica — headquarters: Mandeville, Manchester Parish<br>
-          📞 +1 876-803-6062 · microtuff@proton.me
-        </p>
-      </div>
-    </div>
-  </section>
-
-</div>
 
   <!-- ===== Parts Agent ===== -->
   <section id="parts-agent" class="section">
