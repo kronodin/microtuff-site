@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>DIY Solar Power Systems Guide — Ebook</title>
+<style>
+  @page { size: A5; margin: 15mm; }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: "DejaVu Sans", Arial, sans-serif;
+    background: #fff;
+    color: #1e293b;
+    line-height: 1.6;
+    font-size: 11pt;
+  }
+  .page {
+    page-break-after: always;
+    padding: 20mm;
+    position: relative;
+  }
+  .page:last-child { page-break-after: auto; }
+  h1 { font-size: 24pt; color: #b45309; margin-bottom: 10mm; border-bottom: 2px solid #f59e0b; padding-bottom: 5mm; }
+  h2 { font-size: 18pt; color: #b45309; margin: 8mm 0 4mm 0; }
+  h3 { font-size: 14pt; color: #b45309; margin: 6mm 0 3mm 0; }
+  p { margin-bottom: 3mm; color: #334155; }
+  .muted { color: #64748b; font-size: 10pt; }
+  .gold { color: #b45309; font-weight: bold; }
+  .card {
+    background: #f8fafc;
+    border: 1px solid #e2e8f0;
+    border-left: 4px solid #f59e0b;
+    border-radius: 4px;
+    padding: 4mm;
+    margin: 3mm 0;
+  }
+  .alert {
+    background: #fef3c7;
+    border: 2px solid #f59e0b;
+    border-radius: 4px;
+    padding: 4mm;
+    margin: 4mm 0;
+  }
+  .alert.warn { background: #fef3c7; }
+  .grid { display: block; margin: 3mm 0; }
+  .grid-item { display: inline-block; width: 45%; vertical-align: top; margin: 1%; background: #f8fafc; border: 1px solid #e2e8f0; padding: 3mm; border-radius: 3px; }
+  ul { margin-left: 6mm; margin-bottom: 3mm; }
+  li { margin-bottom: 1.5mm; }
+  .cover {
+    text-align: center;
+    padding-top: 40mm;
+    background: linear-gradient(135deg, #fef3c7, #fde68a);
+  }
+  .cover h1 { font-size: 32pt; border: none; color: #78350f; }
+  .cover h2 { font-size: 22pt; color: #92400e; border: none; }
+  .cover .subtitle { font-size: 14pt; color: #64748b; margin-top: 10mm; }
+  .footer { text-align: center; font-size: 9pt; color: #94a3b8; margin-top: 10mm; border-top: 1px solid #e2e8f0; padding-top: 3mm; }
+  table { width: 100%; border-collapse: collapse; margin: 3mm 0; font-size: 10pt; }
+  th, td { border: 1px solid #e2e8f0; padding: 2mm; text-align: left; }
+  th { background: #f8fafc; font-weight: bold; }
+  .btn { display: inline-block; background: #f59e0b; color: white; padding: 4mm 8mm; border-radius: 4px; text-decoration: none; font-weight: bold; margin: 3mm 0; }
+</style>
+</head>
+<body>
+
+<!-- Cover -->
+<div class="page cover">
+  <h1>☀️ DIY Solar Power Systems Guide</h1>
+  <h2>Complete Handbook for Jamaica</h2>
+  <p class="subtitle">From phone-charging kits to 10kW+ home arrays<br>Learn to size, wire, and build solar systems</p>
+  <div style="margin-top: 20mm">
+    <p><strong>Microtuff Solutions</strong></p>
+    <p>Mandeville, Jamaica</p>
+    <p>1(876) 803-6062</p>
+    <p class="muted">microtuff@proton.me</p>
+  </div>
+</div>
+
+<!-- Page 1: Welcome -->
+<div class="page">
+  <h2>Welcome to Solar DIY</h2>
+  <p>Solar energy is no longer just for large corporations or wealthy homeowners. With falling panel prices and improved battery technology, anyone can build their own solar power system.</p>
+  <div class="alert warn">
+    <strong>⚠️ Getting Started</strong><br>
+    This guide covers systems from 100W portable kits to 10kW+ home arrays. All examples are tailored for Jamaica's climate with 5.0-5.5 peak sun hours daily.
+  </div>
+  <h3>What You'll Learn</h3>
+  <div class="grid">
+    <div class="grid-item"><strong>☀️ Panels</strong><br><span class="muted">Monocrystalline vs poly, wattage sizing, wiring configs</span></div>
+    <div class="grid-item"><strong>🔋 Batteries</strong><br><span class="muted">LiFePO4 vs lead-acid, capacity math, runtime</span></div>
+    <div class="grid-item"><strong>🎛 Controllers</strong><br><span class="muted">PWM vs MPPT, voltage matching, efficiency</span></div>
+    <div class="grid-item"><strong>⚡ Inverters</strong><br><span class="muted">Pure sine wave sizing, surge loads, AC distribution</span></div>
+  </div>
+</div>
+
+<!-- Page 2: Small Systems -->
+<div class="page">
+  <h2>Small Systems (100W–500W)</h2>
+  <p class="muted">Ideal for phone charging, laptop charging, LED TVs, and small electronics.</p>
+  <table>
+    <tr><th>System</th><th>Use Case</th><th>Cost Estimate</th></tr>
+    <tr><td><strong>100W Portable Kit</strong></td><td>Charge 2 phones + 1 laptop daily; run LED TV 2 hours</td><td class="gold">50–50 USD</td></tr>
+    <tr><td><strong>200W Starter</strong></td><td>Adds headroom for cloudy days. Great for sheds and RVs</td><td class="gold">00–50 USD</td></tr>
+    <tr><td><strong>400W Cabin Kit</strong></td><td>Small off-grid setup with inverter for lights, fans, charging</td><td class="gold">00–00 USD</td></tr>
+  </table>
+  <div class="alert warn" style="margin-top: 5mm">
+    <strong>💡 Pro Tip:</strong> Start small. A 100W kit teaches you the basics without a big investment. You can always expand later.
+  </div>
+</div>
+
+<!-- Page 3: Medium Systems -->
+<div class="page">
+  <h2>Medium Systems (500W–2kW)</h2>
+  <p class="muted">Perfect for Starlink Mini, larger TVs, multiple laptops, and home office setups.</p>
+  <table>
+    <tr><th>System</th><th>Use Case</th></tr>
+    <tr><td><strong>800W Office</strong></td><td>Power 2 laptops + TV + router during outages. Great for remote work.</td></tr>
+    <tr><td><strong>1.2kW Hybrid</strong></td><td>Adds battery backup for evening use. Supports JPS net-billing if grid-tied.</td></tr>
+    <tr><td><strong>1.8kW Expandable</strong></td><td>Room to add more panels later. Can handle small appliances plus devices.</td></tr>
+  </table>
+  <h3>Key Components</h3>
+  <div class="grid">
+    <div class="grid-item"><strong>Panels:</strong> 400W–1kW monocrystalline array</div>
+    <div class="grid-item"><strong>Battery:</strong> 12V 100Ah–200Ah LiFePO4 bank</div>
+    <div class="grid-item"><strong>Controller:</strong> 40A MPPT charge controller</div>
+    <div class="grid-item"><strong>Inverter:</strong> 1000W–2000W pure sine wave</div>
+  </div>
+</div>
+
+<!-- Page 4: Large Systems -->
+<div class="page">
+  <h2>Large Systems (2kW–10kW+)</h2>
+  <p class="muted">Full home power: multiple TVs, laptops, Starlink Mini, fridge, and all devices.</p>
+  <table>
+    <tr><th>System</th><th>Use Case</th></tr>
+    <tr><td><strong>3kW Home Backup</strong></td><td>Covers essential circuits: lights, wifi, fridge, TV, and laptop loads.</td></tr>
+    <tr><td><strong>5kW Whole-Home</strong></td><td>Run most household circuits. Ideal for frequent outages or full off-grid.</td></tr>
+    <tr><td><strong>10kW+ Estate</strong></td><td>Multiple inverters, large battery bank, commercial-grade installation.</td></tr>
+  </table>
+  <div class="alert" style="margin-top: 5mm">
+    <strong>⚡ Professional Installation:</strong> Large systems require certified electricians. Nash Technologies provides full installation, JPS net-billing support, and 15-year warranties.
+  </div>
+</div>
+
+<!-- Page 5: Safety -->
+<div class="page">
+  <h2>Safety First ⚠️</h2>
+  <div class="alert">
+    <strong>Electrical Safety Warning:</strong> Solar systems produce high voltage DC that can cause serious injury or fire. Follow NEC code, use properly sized wire, install fuses/breakers on all conductors, and hire a licensed electrician for grid-tied connections.
+  </div>
+  <h3>Wire Sizing & Fusing</h3>
+  <div class="card">
+    Undersized wiring overheats. Size conductors for <span class="gold">1.25× expected current</span>. Fuse every positive conductor at the battery and between components. Use marine-grade or solar-rated cable for outdoor runs.
+  </div>
+  <h3>NEC Requirements</h3>
+  <div class="grid">
+    <div class="grid-item"><strong>Disconnects:</strong> DC and AC disconnects required</div>
+    <div class="grid-item"><strong>Grounding:</strong> All frames and enclosures grounded</div>
+    <div class="grid-item"><strong>Labeling:</strong> Warning signs at all junction boxes</div>
+    <div class="grid-item"><strong>Inspections:</strong> JPS inspection for grid-tied systems</div>
+  </div>
+</div>
+
+<!-- Page 6: Device Charging -->
+<div class="page">
+  <h2>DIY Device Charging Systems</h2>
+  <p class="muted">Step-by-step build guides for charging phones, laptops, Starlink Mini, and TVs with solar.</p>
+  <h3>Phone & Tablet Charging Kit</h3>
+  <div class="card">
+    <ul>
+      <li><strong class="gold">Panel:</strong> 20W monocrystalline</li>
+      <li><strong class="gold">Battery:</strong> 12V 7Ah LiFePO4</li>
+      <li><strong class="gold">Controller:</strong> 10A PWM</li>
+      <li><strong class="gold">Output:</strong> 5V USB-A ports</li>
+      <li><strong class="gold">Runtime:</strong> 2–3 phones per day</li>
+    </ul>
+  </div>
+  <h3>Laptop Charging Station</h3>
+  <div class="card">
+    <ul>
+      <li><strong class="gold">Panel:</strong> 100W monocrystalline</li>
+      <li><strong class="gold">Battery:</strong> 12V 50Ah LiFePO4 (~640Wh)</li>
+      <li><strong class="gold">Controller:</strong> 20A MPPT</li>
+      <li><strong class="gold">Inverter:</strong> 300W pure sine wave</li>
+      <li><strong class="gold">Runtime:</strong> 2–4 hours laptop use</li>
+    </ul>
+  </div>
+</div>
+
+<!-- Page 7: More Device Setups -->
+<div class="page">
+  <h2>More Device Setups</h2>
+  <h3>Starlink Mini Power</h3>
+  <div class="card">
+    <ul>
+      <li><strong class="gold">Panel:</strong> 120W monocrystalline</li>
+      <li><strong class="gold">Battery:</strong> 12V 100Ah LiFePO4</li>
+      <li><strong class="gold">Controller:</strong> 20A–30A MPPT</li>
+      <li><strong class="gold">Inverter:</strong> 300W pure sine wave</li>
+      <li><strong class="gold">Runtime:</strong> 6–10 hours off-grid</li>
+    </ul>
+  </div>
+  <h3>TV & Entertainment</h3>
+  <div class="card">
+    <ul>
+      <li><strong class="gold">Panel:</strong> 150W monocrystalline</li>
+      <li><strong class="gold">Battery:</strong> 12V 100Ah LiFePO4</li>
+      <li><strong class="gold">Controller:</strong> 20A MPPT</li>
+      <li><strong class="gold">Inverter:</strong> 500W pure sine wave</li>
+      <li><strong class="gold">Runtime:</strong> 3–6 hours for 55" LED</li>
+    </ul>
+  </div>
+</div>
+
+<!-- Page 8: Glossary -->
+<div class="page">
+  <h2>Solar & Electrical Glossary</h2>
+  <p class="muted">Simple definitions for common terms on solar labels, invoices, and JPS net-billing paperwork.</p>
+  <table>
+    <tr><th>Term</th><th>Definition</th></tr>
+    <tr><td><strong>Watt (W)</strong></td><td>Unit of power. A 100W bulb uses 100 watts while on.</td></tr>
+    <tr><td><strong>Kilowatt (kW)</strong></td><td>1,000 watts. A 5 kW system produces 5,000 watts at peak sun.</td></tr>
+    <tr><td><strong>Kilowatt-hour (kWh)</strong></td><td>Unit of energy. JPS bills in kWh.</td></tr>
+    <tr><td><strong>Volt (V)</strong></td><td>Electrical pressure. Common solar banks: 12V, 24V, 48V.</td></tr>
+    <tr><td><strong>Ampere (A)</strong></td><td>Current flow. Wiring and fuses are sized by amps.</td></tr>
+    <tr><td><strong>Amp-hour (Ah)</strong></td><td>Battery capacity. A 100Ah battery delivers 5A for 20 hours.</td></tr>
+    <tr><td><strong>PSI</strong></td><td>Pounds per square inch. Used for water pressure and pipe fittings.</td></tr>
+    <tr><td><strong>BTU</strong></td><td>British Thermal Unit. Heat energy; useful for water-heating sizing.</td></tr>
+    <tr><td><strong>Peak Sun Hours</strong></td><td>Hours of 1,000 W/m² irradiance. Jamaica averages 5.0–5.5.</td></tr>
+    <tr><td><strong>Inverter</strong></td><td>Converts DC battery power to AC for appliances.</td></tr>
+    <tr><td><strong>Charge Controller</strong></td><td>Regulates panel-to-battery charging to prevent overcharge.</td></tr>
+    <tr><td><strong>Grid-Tied</strong></td><td>Connected to JPS lines. Allows net billing for excess energy.</td></tr>
+  </table>
+</div>
+
+<!-- Page 9: Calculator -->
+<div class="page">
+  <h2>Solar Calculator</h2>
+  <p class="muted">Estimate daily energy production and system cost for Jamaica conditions.</p>
+  <div class="card">
+    <p><strong>Formula:</strong> Panel Watts × Count × Sun Hours × Efficiency ÷ 100</p>
+    <table>
+      <tr><th>Input</th><th>Value</th></tr>
+      <tr><td>Panel Watts</td><td>400W</td></tr>
+      <tr><td>Panel Count</td><td>4</td></tr>
+      <tr><td>Sun Hours (Jamaica)</td><td>5.5</td></tr>
+      <tr><td>Efficiency</td><td>75%</td></tr>
+      <tr><td><strong>Daily Output</strong></td><td class="gold"><strong>8,800 Wh</strong></td></tr>
+      <tr><td><strong>Estimated Cost</strong></td><td class="gold"><strong>,280 USD</strong></td></tr>
+    </table>
+  </div>
+  <p class="muted">Use this formula to size any system. Adjust panel count and wattage to match your energy needs.</p>
+</div>
+
+<!-- Page 10: Parts Finder -->
+<div class="page">
+  <h2>Solar Parts Finder</h2>
+  <p class="muted">Select a system to see the full bill of materials with local-market pricing in JMD.</p>
+  <table>
+    <tr><th>Component</th><th>Phone/Tablet</th><th>Laptop Station</th><th>Starlink Mini</th></tr>
+    <tr><td>Panel</td><td>20W — ,000 JMD</td><td>100W — 2,000 JMD</td><td>120W — 4,000 JMD</td></tr>
+    <tr><td>Battery</td><td>12V 7Ah LiFePO4 — ,500 JMD</td><td>12V 50Ah LiFePO4 — 8,000 JMD</td><td>12V 100Ah LiFePO4 — 5,000 JMD</td></tr>
+    <tr><td>Controller</td><td>10A PWM — ,500 JMD</td><td>20A MPPT — ,000 JMD</td><td>20A–30A MPPT — 4,000 JMD</td></tr>
+    <tr><td>Inverter</td><td>—</td><td>300W — 2,000 JMD</td><td>300W — 2,000 JMD</td></tr>
+    <tr><td>Other</td><td>5V USB-A — ,200 JMD<br>Wiring — ,500 JMD</td><td>Wiring + breakers — ,000 JMD</td><td>DC-DC converter — ,000 JMD</td></tr>
+    <tr><td><strong>Total</strong></td><td class="gold"><strong>~7,700 JMD</strong></td><td class="gold"><strong>~3,000 JMD</strong></td><td class="gold"><strong>~0,000+ JMD</strong></td></tr>
+  </table>
+  <p class="muted">For full home systems and custom builds, contact Microtuff Solutions for a detailed quote.</p>
+</div>
+
+<!-- Page 11: Contact -->
+<div class="page">
+  <h2>Need Help?</h2>
+  <p>Professional installation, system design, and JPS net-billing support across Jamaica.</p>
+  <div class="grid">
+    <div class="grid-item">
+      <h3>Nash Technologies</h3>
+      <p class="muted">Certified solar installation, 15-year warranties, free site assessments.</p>
+      <p class="gold">1(876) 359-9983</p>
+    </div>
+    <div class="grid-item">
+      <h3>Microtuff Solutions</h3>
+      <p class="muted">Security research, pentesting, FRP removal, hardware sales.</p>
+      <p class="gold">1(876) 803-6062</p>
+    </div>
+  </div>
+  <div class="alert warn" style="margin-top: 8mm">
+    <strong>Ready to start your solar project?</strong><br>
+    Contact us for a free consultation and site assessment. We serve all 14 parishes across Jamaica.
+  </div>
+  <div class="footer">
+    <p>Microtuff Solutions · Mandeville, Jamaica · microtuff@proton.me</p>
+    <p class="muted">This guide is for educational purposes. Always consult a licensed electrician for installation.</p>
+  </div>
+</div>
+
+</body>
+</html>
