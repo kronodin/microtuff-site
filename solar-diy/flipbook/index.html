@@ -20,7 +20,6 @@
     -webkit-user-select:none;
   }
 
-  /* ===== Book Container ===== */
   .book-scene{
     perspective:1800px;
     width:min(95vw, 1100px);
@@ -38,8 +37,7 @@
     inset:0;
     background:#1e293b;
     border-radius:1rem;
-    padding:2.5rem 3rem;
-    overflow-y:auto;
+    overflow:hidden;
     backface-visibility:hidden;
     transform-origin:left center;
     transition:transform 0.7s cubic-bezier(0.4, 0.0, 0.2, 1);
@@ -47,19 +45,29 @@
     box-shadow:0 20px 50px rgba(0,0,0,0.4);
     border:1px solid #334155;
   }
-  .page.flipped{
-    transform:rotateY(-180deg);
+  .page.flipped{transform:rotateY(-180deg)}
+
+  .page-bg{
+    position:absolute;
+    inset:0;
+    width:100%;
+    height:100%;
+    object-fit:cover;
+    opacity:0.18;
+    z-index:0;
+    pointer-events:none;
   }
   .page-content{
+    position:relative;
+    z-index:1;
+    padding:2.5rem 3rem;
+    overflow-y:auto;
+    height:100%;
     opacity:1;
     transition:opacity 0.4s 0.2s;
   }
-  .page.flipped .page-content{
-    opacity:0;
-    transition:opacity 0.1s;
-  }
+  .page.flipped .page-content{opacity:0;transition:opacity 0.1s}
 
-  /* ===== Typography ===== */
   h1{font-size:2.4rem;color:#f59e0b;margin-bottom:1rem;line-height:1.1}
   h2{font-size:1.8rem;color:#f59e0b;margin-bottom:.75rem;line-height:1.2}
   h3{font-size:1.3rem;color:#f59e0b;margin-bottom:.5rem}
@@ -67,20 +75,17 @@
   p{color:#cbd5e1;line-height:1.7;margin-bottom:.75rem}
   .muted{color:#94a3b8}
   .gold{color:#f59e0b}
-  .danger{color:#ef4444}
 
-  /* ===== Cards ===== */
   .card{
-    background:#0f172a;
+    background:rgba(15,23,42,0.85);
     border:1px solid #334155;
     border-radius:.75rem;
     padding:1.25rem;
     margin:.75rem 0;
+    backdrop-filter:blur(4px);
   }
   .card:hover{border-color:#f59e0b;box-shadow:0 0 20px rgba(245,158,11,.15)}
-  .card h3{margin-top:0}
 
-  /* ===== Alert ===== */
   .alert{
     background:rgba(239,68,68,.08);
     border:1px solid rgba(239,68,68,.35);
@@ -95,7 +100,6 @@
     border-left-color:#f59e0b;
   }
 
-  /* ===== Grid ===== */
   .grid{
     display:grid;
     grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
@@ -103,14 +107,13 @@
     margin:1rem 0;
   }
 
-  /* ===== Controls ===== */
   .controls{
     position:fixed;
     bottom:1.5rem;
     left:50%;
     transform:translateX(-50%);
     display:flex;
-    gap:1rem;
+    gap:.75rem;
     align-items:center;
     background:rgba(15,23,42,.9);
     border:1px solid #334155;
@@ -123,11 +126,11 @@
     background:linear-gradient(135deg,#f59e0b,#b45309);
     color:#0f172a;
     border:none;
-    padding:.6rem 1.25rem;
+    padding:.55rem 1.1rem;
     border-radius:999px;
     font-weight:700;
     cursor:pointer;
-    font-size:.95rem;
+    font-size:.9rem;
     transition:transform .15s,filter .15s;
   }
   .controls button:hover{transform:scale(1.05);filter:brightness(1.1)}
@@ -136,11 +139,10 @@
     color:#94a3b8;
     font-size:.9rem;
     font-weight:600;
-    min-width:60px;
+    min-width:55px;
     text-align:center;
   }
 
-  /* ===== Progress ===== */
   .progress{
     position:fixed;
     top:1rem;
@@ -160,18 +162,8 @@
     border-radius:999px;
   }
 
-  /* ===== Page number ===== */
-  .page-num{
-    position:absolute;
-    bottom:1rem;
-    right:1.5rem;
-    color:#64748b;
-    font-size:.85rem;
-  }
-
-  /* ===== Responsive ===== */
   @media(max-width:768px){
-    .page{padding:1.5rem}
+    .page-content{padding:1.5rem}
     h1{font-size:1.8rem}
     h2{font-size:1.4rem}
     .grid{grid-template-columns:1fr}
@@ -187,17 +179,19 @@
 
     <!-- Page 0: Cover -->
     <div class="page" data-page="0">
+      <img class="page-bg" src="flipbook-images/00-cover.jpg" alt="">
       <div class="page-content" style="display:flex;flex-direction:column;align-items:center;justify-content:center;height:100%;text-align:center">
-        <h1 style="font-size:3rem;margin-bottom:.5rem">☀️ DIY Solar Power</h1>
-        <h2 style="font-size:2rem;color:#f59e0b">Systems Guide</h2>
-        <p style="font-size:1.2rem;max-width:500px;margin:2rem auto">From phone-charging kits to 10kW+ home arrays. Learn to size, wire, and build solar systems for Jamaica's sunny climate.</p>
-        <button onclick="flipNext()" style="background:linear-gradient(135deg,#f59e0b,#b45309);color:#0f172a;border:none;padding:1rem 2rem;border-radius:999px;font-weight:700;font-size:1.1rem;cursor:pointer;margin-top:2rem">Start Reading →</button>
-        <p style="margin-top:3rem;color:#64748b;font-size:.9rem">Microtuff Solutions · Mandeville, Jamaica</p>
+        <h1 style="font-size:3.5rem;margin-bottom:.5rem;text-shadow:0 2px 15px rgba(0,0,0,.8)">☀️ DIY Solar Power</h1>
+        <h2 style="font-size:2.2rem;color:#f59e0b;text-shadow:0 2px 12px rgba(0,0,0,.7)">Systems Guide</h2>
+        <p style="font-size:1.2rem;max-width:600px;margin:2rem auto;text-shadow:0 1px 10px rgba(0,0,0,.7)">From phone-charging kits to 10kW+ home arrays. Learn to size, wire, and build solar systems for Jamaica's sunny climate.</p>
+        <button onclick="flipNext()" style="background:linear-gradient(135deg,#f59e0b,#b45309);color:#0f172a;border:none;padding:1rem 2rem;border-radius:999px;font-weight:700;font-size:1.1rem;cursor:pointer;margin-top:2rem;box-shadow:0 10px 25px rgba(245,158,11,.3)">Start Reading →</button>
+        <p style="margin-top:3rem;color:#94a3b8;font-size:.9rem;text-shadow:0 1px 8px rgba(0,0,0,.8)">Microtuff Solutions · Mandeville, Jamaica</p>
       </div>
     </div>
 
     <!-- Page 1: Hero -->
     <div class="page" data-page="1">
+      <img class="page-bg" src="flipbook-images/01-hero.jpg" alt="">
       <div class="page-content">
         <h2>Welcome to Solar DIY</h2>
         <p>Solar energy is no longer just for large corporations or wealthy homeowners. With falling panel prices and improved battery technology, anyone can build their own solar power system.</p>
@@ -217,6 +211,7 @@
 
     <!-- Page 2: Small Systems -->
     <div class="page" data-page="2">
+      <img class="page-bg" src="flipbook-images/02-small.jpg" alt="">
       <div class="page-content">
         <h2>Small Systems (100W–500W)</h2>
         <p class="muted">Ideal for phone charging, laptop charging, LED TVs, and small electronics.</p>
@@ -244,6 +239,7 @@
 
     <!-- Page 3: Medium Systems -->
     <div class="page" data-page="3">
+      <img class="page-bg" src="flipbook-images/03-medium.jpg" alt="">
       <div class="page-content">
         <h2>Medium Systems (500W–2kW)</h2>
         <p class="muted">Perfect for Starlink Mini, larger TVs, multiple laptops, and home office setups.</p>
@@ -273,6 +269,7 @@
 
     <!-- Page 4: Large Systems -->
     <div class="page" data-page="4">
+      <img class="page-bg" src="flipbook-images/04-large.jpg" alt="">
       <div class="page-content">
         <h2>Large Systems (2kW–10kW+)</h2>
         <p class="muted">Full home power: multiple TVs, laptops, Starlink Mini, fridge, and all devices.</p>
@@ -299,6 +296,7 @@
 
     <!-- Page 5: Safety -->
     <div class="page" data-page="5">
+      <img class="page-bg" src="flipbook-images/05-safety.jpg" alt="">
       <div class="page-content">
         <h2>Safety First ⚠️</h2>
         <div class="alert">
@@ -321,6 +319,7 @@
 
     <!-- Page 6: Device Charging -->
     <div class="page" data-page="6">
+      <img class="page-bg" src="flipbook-images/06-device.jpg" alt="">
       <div class="page-content">
         <h2>DIY Device Charging Systems</h2>
         <p class="muted">Step-by-step build guides for charging phones, laptops, Starlink Mini, and TVs with solar.</p>
@@ -349,6 +348,7 @@
 
     <!-- Page 7: More Device Charging -->
     <div class="page" data-page="7">
+      <img class="page-bg" src="flipbook-images/07-device2.jpg" alt="">
       <div class="page-content">
         <h2>More Device Setups</h2>
         <h3>Starlink Mini Power</h3>
@@ -376,6 +376,7 @@
 
     <!-- Page 8: Glossary -->
     <div class="page" data-page="8">
+      <img class="page-bg" src="flipbook-images/08-glossary.jpg" alt="">
       <div class="page-content">
         <h2>Solar & Electrical Glossary</h2>
         <p class="muted">Simple definitions for common terms on solar labels, invoices, and JPS net-billing paperwork.</p>
@@ -398,6 +399,7 @@
 
     <!-- Page 9: Calculator -->
     <div class="page" data-page="9">
+      <img class="page-bg" src="flipbook-images/09-calculator.jpg" alt="">
       <div class="page-content">
         <h2>Solar Calculator</h2>
         <p class="muted">Estimate daily energy production and system cost for Jamaica conditions.</p>
@@ -409,9 +411,9 @@
             <div><label class="muted" style="font-size:.8rem;font-weight:700;text-transform:uppercase">Efficiency %</label><input type="number" value="75" style="width:100%;background:#0f172a;color:#f8fafc;border:1px solid #334155;padding:.6rem;border-radius:.5rem;margin-top:.4rem"></div>
           </div>
           <div style="margin-top:1.25rem;background:#0f172a;border:2px solid #f59e0b;border-radius:.75rem;padding:1.25rem;text-align:center">
-            <div style="font-size:2rem;font-weight:800;color:#f59e0b" id="dailyWh">8,800 Wh</div>
+            <div style="font-size:2rem;font-weight:800;color:#f59e0b">8,800 Wh</div>
             <div class="muted" style="font-size:.85rem;margin-top:.25rem">Estimated daily Wh</div>
-            <div style="font-size:1.1rem;font-weight:700;color:#f8fafc;margin-top:.5rem" id="costUsd">$1,280 USD</div>
+            <div style="font-size:1.1rem;font-weight:700;color:#f8fafc;margin-top:.5rem">$1,280 USD</div>
             <div class="muted" style="font-size:.8rem">Estimated cost</div>
           </div>
         </div>
@@ -421,6 +423,7 @@
 
     <!-- Page 10: Parts Agent -->
     <div class="page" data-page="10">
+      <img class="page-bg" src="flipbook-images/10-parts.jpg" alt="">
       <div class="page-content">
         <h2>Solar Parts Finder</h2>
         <p class="muted">Select a system to see the full bill of materials with local-market pricing in JMD.</p>
@@ -465,9 +468,10 @@
 
     <!-- Page 11: Contact -->
     <div class="page" data-page="11">
+      <img class="page-bg" src="flipbook-images/11-contact.jpg" alt="">
       <div class="page-content" style="display:flex;flex-direction:column;align-items:center;justify-content:center;height:100%;text-align:center">
-        <h1 style="font-size:2.5rem;margin-bottom:1rem">Need Help?</h1>
-        <p style="font-size:1.1rem;max-width:600px;margin-bottom:2rem">Professional installation, system design, and JPS net-billing support across Jamaica.</p>
+        <h1 style="font-size:2.5rem;margin-bottom:1rem;text-shadow:0 2px 10px rgba(0,0,0,.7)">Need Help?</h1>
+        <p style="font-size:1.1rem;max-width:600px;margin-bottom:2rem;text-shadow:0 1px 8px rgba(0,0,0,.7)">Professional installation, system design, and JPS net-billing support across Jamaica.</p>
         <div class="grid" style="width:100%;max-width:700px;margin-bottom:2rem">
           <div class="card">
             <h3>Nash Technologies</h3>
@@ -481,7 +485,7 @@
           </div>
         </div>
         <button onclick="flipTo(0)" style="background:linear-gradient(135deg,#f59e0b,#b45309);color:#0f172a;border:none;padding:.8rem 1.75rem;border-radius:999px;font-weight:700;cursor:pointer;margin-top:1rem">Back to Cover</button>
-        <p style="margin-top:3rem;color:#64748b;font-size:.85rem">Microtuff Solutions · Mandeville, Jamaica · microtuff@proton.me</p>
+        <p style="margin-top:3rem;color:#94a3b8;font-size:.85rem">Microtuff Solutions · Mandeville, Jamaica · microtuff@proton.me</p>
       </div>
     </div>
 
@@ -490,6 +494,8 @@
 
 <div class="controls">
   <button id="prevBtn" onclick="flipPrev()">◀ Prev</button>
+  <button onclick="downloadPage()">⬇ Save Page</button>
+  <button onclick="downloadAll()">⬇ All Pages</button>
   <span class="page-indicator" id="pageIndicator">1 / 12</span>
   <button id="nextBtn" onclick="flipNext()">Next ▶</button>
 </div>
@@ -515,7 +521,6 @@
     currentPage = page;
     updateUI();
   }
-
   function flipNext(){ flipTo(currentPage + 1); }
   function flipPrev(){ flipTo(currentPage - 1); }
 
@@ -532,6 +537,36 @@
     const diff = e.changedTouches[0].screenX - touchStartX;
     if(Math.abs(diff) > 50){ diff > 0 ? flipPrev() : flipNext(); }
   });
+
+  function downloadPage(){
+    const page = pages[currentPage];
+    const img = page.querySelector('img');
+    if(img && img.src){
+      const a = document.createElement('a');
+      a.href = img.src;
+      a.download = 'solar-diy-page-' + (currentPage+1) + '.jpg';
+      a.target = '_blank';
+      a.click();
+    } else {
+      alert('No image on this page to download');
+    }
+  }
+
+  function downloadAll(){
+    let count = 0;
+    pages.forEach((page, i) => {
+      const img = page.querySelector('img');
+      if(img && img.src){
+        const a = document.createElement('a');
+        a.href = img.src;
+        a.download = 'solar-diy-page-' + (i+1) + '.jpg';
+        a.target = '_blank';
+        a.click();
+        count++;
+      }
+    });
+    if(count === 0) alert('No images to download');
+  }
 
   updateUI();
 </script>
