@@ -181,19 +181,19 @@
     <div class="page" data-page="0">
       <img class="page-bg" src="flipbook-images/00-cover.jpg" alt="">
       <div class="page-content" style="display:flex;flex-direction:column;align-items:center;justify-content:center;height:100%;text-align:center">
-        <h1 style="font-size:3.5rem;margin-bottom:.5rem;text-shadow:0 2px 15px rgba(0,0,0,.8)">☀️ DIY Solar Power</h1>
-        <h2 style="font-size:2.2rem;color:#f59e0b;text-shadow:0 2px 12px rgba(0,0,0,.7)">Cook Book</h2>
-        <p style="font-size:1.2rem;max-width:600px;margin:2rem auto;text-shadow:0 1px 10px rgba(0,0,0,.7)">From phone-charging kits to 10kW+ home arrays. Learn to size, wire, and build solar systems for Jamaica's sunny climate.</p>
+        <h1 style="font-size:3.5rem;margin-bottom:.5rem;text-shadow:0 2px 15px rgba(0,0,0,.8)">☀️ The Solar Cook Book</h1>
+        <h2 style="font-size:2.2rem;color:#f59e0b;text-shadow:0 2px 12px rgba(0,0,0,.7)">Professional Solar Guide for Jamaica</h2>
+        <p style="font-size:1.2rem;max-width:600px;margin:2rem auto;text-shadow:0 1px 10px rgba(0,0,0,.7)">From phone-charging kits to 10kW+ home arrays. Learn to size, wire, and build solar systems with custom blueprints and parts sourcing.</p>
         <button onclick="flipNext()" style="background:linear-gradient(135deg,#f59e0b,#b45309);color:#0f172a;border:none;padding:1rem 2rem;border-radius:999px;font-weight:700;font-size:1.1rem;cursor:pointer;margin-top:2rem;box-shadow:0 10px 25px rgba(245,158,11,.3)">Start Reading →</button>
-        <p style="margin-top:3rem;color:#94a3b8;font-size:.9rem;text-shadow:0 1px 8px rgba(0,0,0,.8)">Microtuff Solutions · Mandeville, Jamaica</p>
+        <p style="margin-top:3rem;color:#94a3b8;font-size:.9rem;text-shadow:0 1px 8px rgba(0,0,0,.8)">In Partnership with Nash Technologies · Microtuff Solutions · Mandeville, Jamaica</p>
       </div>
     </div>
 
-    <!-- Page 1: Hero -->
+    <!-- Page 1: Welcome -->
     <div class="page" data-page="1">
       <img class="page-bg" src="flipbook-images/01-hero.jpg" alt="">
       <div class="page-content">
-        <h2>Welcome to Solar DIY</h2>
+        <h2>Welcome to The Solar Cook Book</h2>
         <p>Solar energy is no longer just for large corporations or wealthy homeowners. With falling panel prices and improved battery technology, anyone can build their own solar power system.</p>
         <div class="alert warn">
           <h4>⚠️ Getting Started</h4>
@@ -317,38 +317,48 @@
       </div>
     </div>
 
-    <!-- Page 6: Device Charging -->
+    <!-- Page 6: Custom Builds -->
     <div class="page" data-page="6">
       <img class="page-bg" src="flipbook-images/06-device.jpg" alt="">
       <div class="page-content">
-        <h2>DIY Device Charging Systems</h2>
-        <p class="muted">Step-by-step build guides for charging phones, laptops, Starlink Mini, and TVs with solar.</p>
-        <h3 style="margin-top:1rem">Phone & Tablet Charging Kit</h3>
+        <h2>Custom Builds & Blueprints</h2>
+        <p class="muted">Step-by-step blueprints for small units. Use these as a starting point and adjust to your needs.</p>
+        
+        <h3>🔧 Build 1: 100W Phone Charging Kit</h3>
         <div class="card">
+          <p class="muted">Beginner • 30 min • ~$18,000 JMD</p>
           <ul class="muted" style="padding-left:1.25rem;line-height:1.9">
-            <li><strong class="gold">Panel:</strong> 20W monocrystalline</li>
-            <li><strong class="gold">Battery:</strong> 12V 7Ah LiFePO4</li>
-            <li><strong class="gold">Controller:</strong> 10A PWM</li>
-            <li><strong class="gold">Output:</strong> 5V USB-A ports</li>
-            <li><strong class="gold">Runtime:</strong> 2–3 phones per day</li>
+            <li>20W panel → 10A PWM → 12V 7Ah LiFePO4 → USB output</li>
+            <li>Wiring: Panel (+) → Controller → Battery → Load</li>
+            <li>Enclosure: Waterproof project box</li>
           </ul>
         </div>
-        <h3 style="margin-top:1rem">Laptop Charging Station</h3>
+        
+        <h3>🔧 Build 2: 200W Laptop Station</h3>
         <div class="card">
+          <p class="muted">Intermediate • 1–2 hrs • ~$70,000 JMD</p>
           <ul class="muted" style="padding-left:1.25rem;line-height:1.9">
-            <li><strong class="gold">Panel:</strong> 100W monocrystalline</li>
-            <li><strong class="gold">Battery:</strong> 12V 50Ah LiFePO4 (~640Wh)</li>
-            <li><strong class="gold">Controller:</strong> 20A MPPT</li>
-            <li><strong class="gold">Inverter:</strong> 300W pure sine wave</li>
-            <li><strong class="gold">Runtime:</strong> 2–4 hours laptop use</li>
+            <li>2× 100W panels parallel → 20A MPPT → 12V 50Ah → 300W inverter</li>
+            <li>Fuse on positive battery cable, ground all frames</li>
+            <li>Run laptop directly from 300W AC outlet</li>
+          </ul>
+        </div>
+        
+        <h3>🔧 Build 3: 400W Cabin Kit</h3>
+        <div class="card">
+          <p class="muted">Intermediate • 2–3 hrs • ~$126,000 JMD</p>
+          <ul class="muted" style="padding-left:1.25rem;line-height:1.9">
+            <li>2× 200W parallel → 40A MPPT → 12V 100Ah → 1000W inverter</li>
+            <li>40A breaker between controller and battery</li>
+            <li>DC disconnect required, roof/ground mount</li>
           </ul>
         </div>
       </div>
     </div>
 
-    <!-- Page 7: More Device Charging -->
+    <!-- Page 7: Device Charging -->
     <div class="page" data-page="7">
-      <img class="page-bg" src="flipbook-images/07-device2.jpg" alt="">
+      <img class="page-bg" src="flipbook-images/07-custom.jpg" alt="">
       <div class="page-content">
         <h2>More Device Setups</h2>
         <h3>Starlink Mini Power</h3>
@@ -397,31 +407,46 @@
       </div>
     </div>
 
-    <!-- Page 9: Calculator -->
+    <!-- Page 9: Sourcing Parts -->
     <div class="page" data-page="9">
-      <img class="page-bg" src="flipbook-images/09-calculator.jpg" alt="">
+      <img class="page-bg" src="flipbook-images/09-sourcing.jpg" alt="">
       <div class="page-content">
-        <h2>Solar Calculator</h2>
-        <p class="muted">Estimate daily energy production and system cost for Jamaica conditions.</p>
-        <div class="card">
-          <div class="grid">
-            <div><label class="muted" style="font-size:.8rem;font-weight:700;text-transform:uppercase">Panel Watts</label><input type="number" value="400" style="width:100%;background:#0f172a;color:#f8fafc;border:1px solid #334155;padding:.6rem;border-radius:.5rem;margin-top:.4rem"></div>
-            <div><label class="muted" style="font-size:.8rem;font-weight:700;text-transform:uppercase">Panel Count</label><input type="number" value="4" style="width:100%;background:#0f172a;color:#f8fafc;border:1px solid #334155;padding:.6rem;border-radius:.5rem;margin-top:.4rem"></div>
-            <div><label class="muted" style="font-size:.8rem;font-weight:700;text-transform:uppercase">Sun Hours</label><input type="number" value="5.5" style="width:100%;background:#0f172a;color:#f8fafc;border:1px solid #334155;padding:.6rem;border-radius:.5rem;margin-top:.4rem"></div>
-            <div><label class="muted" style="font-size:.8rem;font-weight:700;text-transform:uppercase">Efficiency %</label><input type="number" value="75" style="width:100%;background:#0f172a;color:#f8fafc;border:1px solid #334155;padding:.6rem;border-radius:.5rem;margin-top:.4rem"></div>
-          </div>
-          <div style="margin-top:1.25rem;background:#0f172a;border:2px solid #f59e0b;border-radius:.75rem;padding:1.25rem;text-align:center">
-            <div style="font-size:2rem;font-weight:800;color:#f59e0b">8,800 Wh</div>
-            <div class="muted" style="font-size:.85rem;margin-top:.25rem">Estimated daily Wh</div>
-            <div style="font-size:1.1rem;font-weight:700;color:#f8fafc;margin-top:.5rem">$1,280 USD</div>
-            <div class="muted" style="font-size:.8rem">Estimated cost</div>
-          </div>
+        <h2>Sourcing Parts in Jamaica</h2>
+        <p class="muted">Where to find solar components locally and what to look for when buying.</p>
+        
+        <h3>Local Suppliers</h3>
+        <div class="grid">
+          <div class="card"><h4>Hardware Stores</h4><p class="muted">Banks, Jamaica Producers, Fontana for basic wiring, fuses, enclosures, and tools.</p></div>
+          <div class="card"><h4>Electrical Wholesalers</h4><p class="muted">Kingston and Montego Bay have specialized electrical suppliers for breakers, panels, and inverters.</p></div>
+          <div class="card"><h4>Solar Retailers</h4><p class="muted">Mandeville and Kingston solar shops carry panels, batteries, and controllers.</p></div>
+          <div class="card"><h4>Online Marketplaces</h4><p class="muted">Facebook groups, Jamaican classifieds, and regional distributors.</p></div>
         </div>
-        <p class="muted" style="margin-top:1rem;font-size:.9rem">Formula: Panel Watts × Count × Sun Hours × Efficiency ÷ 100</p>
+        
+        <h3 style="margin-top:1.5rem">What to Buy Locally vs Import</h3>
+        <div class="card">
+          <p><strong>Buy Locally:</strong> Wiring, fuses, breakers, enclosures, basic tools, MC4 connectors, cable trays.</p>
+          <p><strong>Consider Importing:</strong> High-efficiency panels, premium LiFePO4 batteries, MPPT controllers, pure sine wave inverters.</p>
+        </div>
+        
+        <h3 style="margin-top:1.5rem">Quality Checklist</h3>
+        <div class="alert">
+          <ul class="muted" style="padding-left:1.25rem;line-height:1.9">
+            <li><strong>Panels:</strong> Tier-1 manufacturers, 25-year warranty, IEC 61215 certified</li>
+            <li><strong>Batteries:</strong> LiFePO4 preferred, 2000+ cycles, 5–10 year warranty, BMS included</li>
+            <li><strong>Controllers:</strong> MPPT over PWM for systems over 200W</li>
+            <li><strong>Inverters:</strong> Pure sine wave only, >90% efficiency, proper surge rating</li>
+            <li><strong>Wiring:</strong> Solar-rated PV cable, correct AWG for current, UV-resistant sheath</li>
+          </ul>
+        </div>
+        
+        <div class="alert warn" style="margin-top:1rem">
+          <h4>Need Help Sourcing?</h4>
+          <p>Contact Microtuff Solutions for a curated parts list and vendor recommendations. We can also coordinate bulk orders for community projects.</p>
+        </div>
       </div>
     </div>
 
-    <!-- Page 10: Parts Agent -->
+    <!-- Page 10: Parts Finder -->
     <div class="page" data-page="10">
       <img class="page-bg" src="flipbook-images/10-parts.jpg" alt="">
       <div class="page-content">
@@ -502,7 +527,7 @@
 
 <script>
   const pages = document.querySelectorAll('.page');
-  const totalPages = pages.length;
+  const totalPages = 11;
   let currentPage = 0;
 
   function updateUI(){

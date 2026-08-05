@@ -160,6 +160,87 @@
   </div>
 </div>
 
+
+<!-- Page: Custom Builds & Blueprints -->
+<div class="page">
+  <h1>Custom Builds & Blueprints</h1>
+  <p class="muted">Step-by-step blueprints for small units. Use these as a starting point and adjust to your needs.</p>
+  
+  <h2>🔧 Build 1: 100W Phone Charging Kit</h2>
+  <div class="alert warn">
+    <strong>Skill Level:</strong> Beginner | <strong>Time:</strong> 30 minutes | <strong>Cost:</strong> ~7,700 JMD
+  </div>
+  <h3>Parts List</h3>
+  <table>
+    <tr><th>Part</th><th>Spec</th><th>Qty</th><th>Est. Price (JMD)</th></tr>
+    <tr><td>Solar Panel</td><td>20W monocrystalline, 12V</td><td>1</td><td>,000</td></tr>
+    <tr><td>Battery</td><td>12V 7Ah LiFePO4</td><td>1</td><td>,500</td></tr>
+    <tr><td>Charge Controller</td><td>10A PWM</td><td>1</td><td>,500</td></tr>
+    <tr><td>USB Output Board</td><td>5V USB-A dual port</td><td>1</td><td>,200</td></tr>
+    <tr><td>Wiring Kit</td><td>16AWG solar cable, MC4 connectors</td><td>1</td><td>,500</td></tr>
+    <tr><td>Enclosure</td><td>Waterproof project box</td><td>1</td><td>00</td></tr>
+    <tr><td><strong>Total</strong></td><td colspan="2"></td><td class="gold"><strong>~8,000 JMD</strong></td></tr>
+  </table>
+  
+  <h3>Wiring Diagram</h3>
+  <div class="card">
+    <p><strong>Panel (+) → Controller (+) → Battery (+) → Load (+) → Ground</strong></p>
+    <p class="muted">Panel (-) → Controller (-) → Battery (-) → Load (-)</p>
+  </div>
+  
+  <h3>Step-by-Step Build</h3>
+  <div class="grid">
+    <div class="grid-item"><strong>1. Mount Panel</strong><br><span class="muted">Place in full sun, angled toward equator</span></div>
+    <div class="grid-item"><strong>2. Wire Panel to Controller</strong><br><span class="muted">Red to +, black to -, keep runs short</span></div>
+    <div class="grid-item"><strong>3. Connect Battery</strong><br><span class="muted">Connect battery FIRST before panel</span></div>
+    <div class="grid-item"><strong>4. Wire USB Output</strong><br><span class="muted">5V board to battery terminals</span></div>
+    <div class="grid-item"><strong>5. Test & Seal</strong><br><span class="muted">Verify charging, mount in enclosure</span></div>
+    <div class="grid-item"><strong>6. Deploy</strong><br><span class="muted">Place in sun, charge devices</span></div>
+  </div>
+  
+  <h2>🔧 Build 2: 200W Laptop Station</h2>
+  <div class="alert warn">
+    <strong>Skill Level:</strong> Intermediate | <strong>Time:</strong> 1–2 hours | <strong>Cost:</strong> ~3,000 JMD
+  </div>
+  <h3>Parts List</h3>
+  <table>
+    <tr><th>Part</th><th>Spec</th><th>Qty</th><th>Est. Price (JMD)</th></tr>
+    <tr><td>Solar Panel</td><td>100W monocrystalline, 12V</td><td>2</td><td>4,000</td></tr>
+    <tr><td>Battery</td><td>12V 50Ah LiFePO4</td><td>1</td><td>8,000</td></tr>
+    <tr><td>Charge Controller</td><td>20A MPPT</td><td>1</td><td>,000</td></tr>
+    <tr><td>Inverter</td><td>300W pure sine wave</td><td>1</td><td>2,000</td></tr>
+    <tr><td>Wiring + Breakers</td><td>12AWG solar cable, 20A fuse</td><td>1</td><td>,000</td></tr>
+    <tr><td>Enclosure / Rack</td><td>Steel or aluminum frame</td><td>1</td><td>,000</td></tr>
+    <tr><td><strong>Total</strong></td><td colspan="2"></td><td class="gold"><strong>~0,000 JMD</strong></td></tr>
+  </table>
+  
+  <h3>Wiring Diagram</h3>
+  <div class="card">
+    <p><strong>2× Panels in Parallel → 20A MPPT → 12V 50Ah LiFePO4 → 300W Inverter → AC Outlets</strong></p>
+    <p class="muted">Fuse on positive battery cable. Ground all metal frames.</p>
+  </div>
+  
+  <h2>🔧 Build 3: 400W Cabin Kit</h2>
+  <div class="alert warn">
+    <strong>Skill Level:</strong> Intermediate | <strong>Time:</strong> 2–3 hours | <strong>Cost:</strong> ~5,000 JMD
+  </div>
+  <h3>Parts List</h3>
+  <table>
+    <tr><th>Part</th><th>Spec</th><th>Qty</th><th>Est. Price (JMD)</th></tr>
+    <tr><td>Solar Panel</td><td>200W monocrystalline, 12V</td><td>2</td><td>6,000</td></tr>
+    <tr><td>Battery</td><td>12V 100Ah LiFePO4</td><td>1</td><td>5,000</td></tr>
+    <tr><td>Charge Controller</td><td>40A MPPT</td><td>1</td><td>4,000</td></tr>
+    <tr><td>Inverter</td><td>1000W pure sine wave</td><td>1</td><td>8,000</td></tr>
+    <tr><td>Wiring + Breakers</td><td>10AWG solar cable, 40A fuse</td><td>1</td><td>,000</td></tr>
+    <tr><td>Mounting Rack</td><td>Roof or ground mount</td><td>1</td><td>,000</td></tr>
+    <tr><td><strong>Total</strong></td><td colspan="2"></td><td class="gold"><strong>~26,000 JMD</strong></td></tr>
+  </table>
+  
+  <h3>Wiring Diagram</h3>
+  <div class="card">
+    <p><strong>2× 200W Parallel → 40A MPPT → 12V 100Ah → 1000W Inverter → AC Distribution Panel</strong></p>
+    <p class="muted">Use 40A breaker between controller and battery. Install DC disconnect.</p>
+  </div>
 <!-- Page 6: Device Charging -->
 <div class="page">
   <h2>DIY Device Charging Systems</h2>
@@ -325,6 +406,49 @@
   </div>
 </div>
 
+
+<!-- Page: Sourcing Parts in Jamaica -->
+<div class="page">
+  <h1>Sourcing Parts in Jamaica</h1>
+  <p class="muted">Where to find solar components locally and what to look for when buying.</p>
+  
+  <h2>Local Suppliers</h2>
+  <div class="grid">
+    <div class="grid-item"><strong>Hardware Stores</strong><br><span class="muted">Banks, Jamaica Producers, Fontana for basic wiring, fuses, enclosures, and tools.</span></div>
+    <div class="grid-item"><strong>Electrical Wholesalers</strong><br><span class="muted">Kingston and Montego Bay have specialized electrical suppliers for breakers, panels, and inverters.</span></div>
+    <div class="grid-item"><strong>Solar Retailers</strong><br><span class="muted">Mandeville and Kingston solar shops carry panels, batteries, and controllers.</span></div>
+    <div class="grid-item"><strong>Online Marketplaces</strong><br><span class="muted">Facebook groups, Jamaican classifieds, and regional distributors.</span></div>
+  </div>
+  
+  <h2>What to Buy Locally vs Import</h2>
+  <div class="card">
+    <p><strong>Buy Locally:</strong> Wiring, fuses, breakers, enclosures, basic tools, MC4 connectors, cable trays.</p>
+    <p><strong>Consider Importing:</strong> High-efficiency panels, premium LiFePO4 batteries, MPPT controllers, pure sine wave inverters.</p>
+  </div>
+  
+  <h2>Quality Checklist</h2>
+  <div class="alert">
+    <ul>
+      <li><strong>Panels:</strong> Look for Tier-1 manufacturers, check warranty (25-year performance), verify IEC 61215 certification.</li>
+      <li><strong>Batteries:</strong> LiFePO4 preferred over lead-acid. Check cycle life (2000+ cycles), warranty (5–10 years), and BMS included.</li>
+      <li><strong>Controllers:</strong> MPPT over PWM for systems over 200W. Verify voltage range matches your panels.</li>
+      <li><strong>Inverters:</strong> Pure sine wave only for sensitive electronics. Check surge rating and efficiency (>90%).</li>
+      <li><strong>Wiring:</strong> Use solar-rated cable (PV wire), proper AWG for current, and UV-resistant outer sheath.</li>
+    </ul>
+  </div>
+  
+  <h2>Budget Tips</h2>
+  <div class="grid">
+    <div class="grid-item"><strong>Start Small</strong><br><span class="muted">Buy a 100W kit first to learn before investing big.</span></div>
+    <div class="grid-item"><strong>Buy in Bulk</strong><br><span class="muted">Group buys with neighbors can cut costs 15–20%.</span></div>
+    <div class="grid-item"><strong>Used Panels</strong><br><span class="muted">Used or B-grade panels are cheaper and still functional.</span></div>
+    <div class="grid-item"><strong>Local Assembly</strong><br><span class="muted">Buy parts separately and assemble yourself to save labor.</span></div>
+  </div>
+  
+  <div class="alert warn" style="margin-top:6mm">
+    <strong>Need Help Sourcing?</strong> Contact Microtuff Solutions for a curated parts list and vendor recommendations. We can also coordinate bulk orders for community projects.
+  </div>
+</div>
 <!-- Page 11: Contact -->
 <div class="page">
   <h2>Need Help?</h2>
